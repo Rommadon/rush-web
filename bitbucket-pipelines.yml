@@ -1,0 +1,6 @@
+pipelines:
+  branches:
+    develop:
+      - step:
+          script:
+            - curl -X POST https://shopdit-admin:118d66bc5d62c8f31cb8779661374badee@ci.shopdit.com/job/Staging/job/web/buildWithParameters

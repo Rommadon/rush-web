@@ -1,0 +1,175 @@
+{
+  "order": {
+    "addressForm": {
+      "title": "ที่อยู่",
+      "addressName": "ชื่อที่อยู่",
+      "name": "ชื่อ - นามสกุล",
+      "phoneNumber": "หมายเลขโทรศัพท์",
+      "email": "อีเมล",
+      "address": "ที่อยู่",
+      "province": "จังหวัด",
+      "district": "เขต/อำเภอ",
+      "subDistrict": "แขวง/ตำบล",
+      "zipCode": "รหัสไปรษณีย์",
+      "setDefault": "ตั้งเป็นค่าเริ่มต้น",
+      "submit": "ยืนยัน"
+    },
+    "orderReview": {
+      "title": "รีวิวคำสั่งซื้อ",
+      "addressTitle": "ที่อยู่",
+      "shipping": {
+        "title": "ช่องทางจัดส่ง",
+        "": ""
+      },
+      "note": {
+        "title": "หมายเหตุถึงร้านค้า",
+        "placeholder": "ระบุหมายเหตุถึงร้านค้า สูงสุด 200 ตัวอักษร"
+      },
+      "default": "(ค่าเริ่มต้น)",
+      "paymentOptionTitle": "ช่องทางชำระเงิน",
+      "sidebar": {
+        "title": "สรุปรายการสั่งซื้อ",
+        "coupon": "คูปอง",
+        "redeem": "เลือกคูปอง",
+        "subtotal": "ราคารวมสินค้า",
+        "discount": "ส่วนลดที่ได้",
+        "shipmentPrice": "ค่าจัดส่ง",
+        "total": "ยอดเงินที่ต้องชำระ",
+        "submit": "ยืนยันคำสั่งซื้อ",
+        "submitWithOutCoupon": "ยืนยันคำสั่งซื้อ (ไม่มีคูปอง)",
+        "changeCoupon": "เปลี่ยน",
+        "productList": "รายการสินค้า",
+        "items": "{item} รายการ"
+      },
+      "addNewAddress": "เพิ่มที่อยู่"
+    },
+    "couponModal": {
+      "title": "เลือกคูปอง",
+      "submit": "ยืนยัน"
+    },
+    "couponItem": {
+      "endDate": "ใช้ได้ก่อน",
+      "startDate": "เริ่มใช้ตั่งแต่"
+    },
+    "voucherItem": {
+      "endDate": "ใช้ได้ก่อน",
+      "booking": "จองคิว",
+      "contactInfo": "ข้อมูลติดต่อ"
+    },
+    "orderItemSidebar": {
+      "subtotal": "ยอดรวม"
+    },
+    "addressModal": {
+      "title": "เพิ่มที่อยู่"
+    },
+    "paymentDetail": {
+      "title": "รายละเอียดการชำระเงิน",
+      "subtitle": "ดำเนินการ",
+      "uploadImage": "อัพโหลดภาพ",
+      "total": "ยอดเงินชำระ",
+      "bank": "ธนาคารที่ชำระเงิน",
+      "paidAt": "ชำระเมื่อ",
+      "chooseBank": "เลือกธนาคาร",
+      "orderNumber": "หมายเลขคำสั่งซื้อ",
+      "bankAccount": "ชื่อบัญชี",
+      "paymentOptionTitle": "ช่องทางชำระเงิน",
+      "uploadNow": "อัพโหลดหลักฐานการชำระเงิน",
+      "uploadLater": "อัพโหลดหลักฐานการชำระเงินภายหลัง",
+      "successful": "ทำการสั่งซื้อ {orderNumber} เรียบร้อยแล้ว สามารถดูรายละเอียดได้ที่ อีเมล ของท่าน"
+    },
+    "orderItem": {
+      "pendingPayment": "รอชำระ",
+      "pendingVerify": "รอตรวจสอบ",
+      "prepareProduct": "เตรียมสินค้า",
+      "shipping": "กำลังส่ง",
+      "returnProduct": "ส่งคืน",
+      "success": "สำเร็จ",
+      "cancel": "ถูกยกเลิก",
+      "expire": "หมดอายุ",
+      "orderItem": "รายการสินค้า",
+      "items": "{item} รายการ",
+      "subtotal": "ยอดรวม",
+      "total": "ยอดรวม",
+      "proceedPayment": "ชำระเงินตอนนี้",
+      "seeMore": "รายละเอียด",
+      "buyAgain": "ซื้ออีกครั้ง",
+      "paymentChannel": "ช่องทางชำระเงิน"
+    },
+    "orderList": {
+      "title": "บัญชีของ",
+      "service": "บริการ",
+      "orders": "คำสั่งซื้อ",
+      "status": {
+        "all": "ทั้งหมด",
+        "pendingPayment": "รอชำระ",
+        "pendingVerify": "รอตรวจสอบ",
+        "prepareProduct": "เตรียมสินค้า",
+        "shipping": "กำลังส่ง",
+        "returnProduct": "ส่งคืน",
+        "success": "สำเร็จ",
+        "cancel": "ถูกยกเลิก",
+        "expire": "หมดอายุ"
+      },
+      "all": "ทั้งหมด",
+      "placed": "รอการชำระเงิน",
+      "paid": "เตรียมการจัดส่ง",
+      "delivered": "กำลังจัดส่ง",
+      "completed": "สำเร็จแล้ว",
+      "canceled": "ถูกยกเลิก",
+      "orderAgain": "ซื้ออีกครั้ง",
+      "coupon": "คูปอง",
+      "wishlist": "สินค้าที่ชอบ",
+      "promotion": "โปรโมชั่น",
+      "notification": "แจ้งเตือน",
+      "myAccount": "บัญชีของฉัน",
+      "personalInformation": "ข้อมูลส่วนตัว",
+      "address": "จัดการที่อยู่",
+      "payment": "การชำระเงิน",
+      "setting": "ตั้งค่า",
+      "items": "{item} รายการ"
+    },
+    "orderStepper": {
+      "pendingPayment": "รอชำระ",
+      "pendingVerify": "รอตรวจสอบ",
+      "prepareProduct": "เตรียมสินค้า",
+      "shipping": "กำลังส่ง",
+      "returnProduct": "ส่งคืน",
+      "success": "สำเร็จ",
+      "cancel": "ถูกยกเลิก",
+      "expire": "หมดอายุ"
+    },
+    "orderDetail": {
+      "orderHistory": "ประวัติคำสั่งซื้อ",
+      "items": "{item} รายการ",
+      "total": "ยอดรวม",
+      "subtotal": "ยอดรวม",
+      "orderItem": "รายการสินค้า",
+      "status": "สถานะ",
+      "orderDate": "วันที่สั่งซื้อ",
+      "paymentChannel": "ช่องทางชำระเงิน",
+      "paymentDate": "วันที่ชำระเงิน",
+      "shipmentChannel": "ช่องทางการจัดส่ง",
+      "trackingNumber": "เลขติดตามพัสดุ",
+      "shipmentDate": "วันที่จัดส่ง",
+      "receiveDate": "วันที่ได้รับสินค้า"
+    },
+    "orderPaymentDetail": {
+      "title": "รายละเอียดการชำระเงิน",
+      "bankAccount": "ชื่อบัญชี"
+    },
+    "slipUploadModal": {
+      "title": "อัพโหลดหลักฐานการชำระเงิน",
+      "submit": "ยืนยัน",
+      "uploadImage": "อัพโหลดภาพ:",
+      "total": "ยอดเงินชำระ",
+      "bank": "ธนาคารที่ชำระเงิน",
+      "chooseBank": "เลือกธนาคาร",
+      "paidAt": "ชำระเมื่อ"
+    },
+    "sidebar": {
+      
+    }
+  },
+  "successful": "ทำการชำระคำสั่งซื้อ {orderNumber} เรียบร้อยแล้ว สามารถดูรายละเอียดได้ที่ อีเมล ของท่าน",
+  "error": "ทำการชำระคำสั่งซื้อ ออร์เดอร์ {orderNumber} ไม่สำเร็จ"
+}

@@ -1,0 +1,94 @@
+{
+  "home": {
+    "category": "หมวดหมู่สินค้า",
+    "flashSale": "แฟลชเซลล์",
+    "catalog": "แค็ตตาล็อก",
+    "more": "ดูเพิ่มเติม",
+    "popularItems": "สินค้าขายดี",
+    "newIn": "สินค้ามาใหม่",
+    "articles": "บทความ"
+  },
+  "flashSale": {
+    "remaining": "ขายแล้ว",
+    "sold": "คงเหลือ"
+  },
+  "summaryProducts": {
+    "recommended": "แนะนำ",
+    "bestSeller": "ขายดี",
+    "newIn": "มาใหม่",
+    "promoted": "โปรโมชั่น",
+    "recentlyViewed": "ดูล่าสุด",
+    "item": "{item} รายการ",
+    "sortBy": "เรียงตาม"
+  },
+  "productSearch": {
+    "filter": "ตัวกรองสินค้า",
+    "category": "หมวดหมู่",
+    "brand": "แบรนด์",
+    "searchResult": "ผลการค้นหา",
+    "foundItems": "{result} รายการ",
+    "sortBy": "เรียงตาม"
+  },
+  "productDetail": {
+    "sku": "SKU",
+    "detail": "รายละเอียดสินค้า",
+    "category": "ประเภท",
+    "unit": "หน่วย",
+    "stockRemaining": "สินค้าคงเหลือ",
+    "weight": "น้ำหนัก",
+    "height": "",
+    "dimension": "ขนาด",
+    "addToCart": "เพิ่มลงตะกร้า",
+    "outOfStock": "สินค้าหมด",
+    "compare": "เปรียบเทียบ",
+    "colors": "สี",
+    "sizes": "ไซส์",
+    "similarProducts": "สินค้าที่เกี่ยวข้อง",
+    "set": "สินค้าในเซท",
+    "more": "ดูเพิ่มเติม",
+    "item": "{item} รายการ",
+    "packageModal": {
+      "title": "รายการสินค้าในแพคเกจ ({item} รายการ)"
+    }
+  },
+  "product": {
+    "comparisonSnackbar": {
+      "compare": "เปรียบเทียบสินค้า",
+      "openModal": "ดูการเปรียบเทียบ",
+      "reset": "รีเซ็ต"
+    },
+    "comparisonModal": {
+      "title": "เปรียบเทียบสินค้า",
+      "shopNow": "ซื้อสินค้า",
+      "sku": "SKU",
+      "detail": "รายละเอียดสินค้า",
+      "category": "ประเภท",
+      "unit": "หน่วย",
+      "weight": "น้ำหนัก",
+      "height": "",
+      "dimension": "ขนาด",
+      "addToCart": "เพิ่มลงตะกร้า",
+      "compare": "เปรียบเทียบ",
+      "color": "สี",
+      "sizes": "ไซส์",
+      "set": "สินค้าในเซท",
+      "price": "ราคา",
+      "total": "ทั้งหมด",
+      "item": "รายการ",
+      "more": "ดูเพิ่มเติม"
+    },
+    "flashSale": {
+      "title": "แฟลชเซล"
+    },
+    "cart": {
+      "title": "สรุปรายการสั่งซื้อ",
+      "total": "รวมทั้งหมด",
+      "submit": "สั่งซื้อตอนนี้",
+      "items": "{item} รายการ"
+    },
+    "cartItem": {
+      "total": "ยอดรวม",
+      "options": "ตัวเลือก"
+    }
+  }
+}

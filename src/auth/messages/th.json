@@ -1,0 +1,44 @@
+{
+  "auth": {
+    "socialLogin": {
+      "or": "หรือ",
+      "footer": "*ท่านสามารถสั่งซื้อได้ โดยไม่เป็นสมาชิก แต่จะไม่สามารถรับสิทธิประโยชน์บางอย่างจากร้านค้าได้"
+    },
+    "loginForm": {
+      "title": "เข้าสู่ระบบ",
+      "phoneNumber": "เบอร์โทรศัพท์",
+      "loginWithOtp": "เปลี่ยนเป็นเข้าสู่ระบบด้วย OTP",
+      "loginWithPassword": "เปลี่ยนเป็นเข้าสู่ระบบด้วยรหัสผ่าน",
+      "password": "รหัสผ่าน",
+      "or": "หรือ",
+      "login": "เข้าสู่ระบบ",
+      "identityVerification": "ยืนยันตัวตน",
+      "otpSentTo": "รหัส OTP ได้ถูกส่งไปยังเบอร์โทรศัพท์ของ"
+    },
+    "requestOtpForm": {
+      "title": "เข้าสู่ระบบ",
+      "phoneNumber": "เบอร์โทรศัพท์",
+      "loginWithPassword": "เปลี่ยนเป็นเข้าสู่ระบบด้วยรหัสผ่าน",
+      "sendOtp": "ส่งรหัส OTP"
+    },
+    "verifyOtpForm": {
+      "identityVerification": "ยืนยันตัวตน",
+      "otpSentTo": "รหัส OTP ได้ถูกส่งไปยังเบอร์โทรศัพท์ของ",
+      "otpRef": "รหัส OTP เลขอ้างอิง: {ref}",
+      "confirm": "ยืนยัน",
+      "sendAgain": "ส่งอีกครั้ง ",
+      "second": "วินาที"
+    }
+  },
+  "verify_page": {
+    "verify_customer": "ยืนยันผู้ใช้งาน",
+    "system_verifying": "ระบบกำลังทำการยืนยันผู้ใช้งานของท่าน",
+    "verify_success": "ยืนยันผู้ใช้งานสำเร็จ",
+    "will_redirect_homepage": "ระบบจะนำทางกลับสู่หน้าหลักใน",
+    "seconds": "วินาที",
+    "redirect_homepage": "นำทางกลับสู่หน้าหลัก",
+    "verify_failed": "ยืนยันผู้ใช้งานไม่สำเร็จ",
+    "contact_support": "กรุณาติดต่อเจ้าหน้าที่",
+    "thank_you": "ขอบคุณสำหรับการใช้งานกับทาง"
+  }
+}

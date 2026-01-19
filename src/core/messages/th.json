@@ -1,0 +1,30 @@
+{
+  "navbar": {
+    "newIn": "สินค้าใหม่",
+    "flashSale": "สินค้าลดราคา",
+    "promotion": "สินค้าโปรโมชั่น",
+    "loginBtn": "เข้าสู่ระบบ"
+  },
+  "footer": {
+    "copyright": "© 2021, {merchantName}. Powered by Shopdit",
+    "companyName": "บริษัท {companyName}",
+    "followUs": "ติดตามเรา:",
+    "locale": "ภาษา",
+    "contact": "ช่องทางการติดต่อ",
+    "termsAndPolicies": "เงื่อนไขและนโยบาย",
+    "aboutUs": "เกี่ยวกับเรา",
+    "privacyPolicy": "นโยบายความเป็นส่วนตัว",
+    "frequentlyAskedQuestions": "คำถามที่พบบ่อย",
+    "contactUs": "ติดต่อเรา"
+  },
+  "footerMobile": {
+    "home": "หน้าหลัก",
+    "products": "สินค้า",
+    "orders": "คำสั่งซื้อ",
+    "notifications": "แจ้งเตือน",
+    "myProfile": "ฉัน"
+  },
+  "searchInput": {
+    "placeholder": "ค้นหา"
+  }
+}

@@ -1,0 +1,56 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Values.app.ingress.name }}
+  namespace: {{ .Values.app.namespace }}
+  annotations:
+    cert-manager.io/issuer: {{ .Values.issuer.name }}
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+      - "{{ .Values.ingress.host }}"
+      secretName: {{ .Values.certificate.name }}
+  rules:
+    - host: "{{ .Values.ingress.host }}"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Values.app.service.name }}
+                port:
+                  number: 80
+---
+{{- if .Values.extHost.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: shopdit-web-http01-ingress
+  namespace: {{ .Values.app.namespace }}
+  annotations:
+    cert-manager.io/issuer: shopdit-web-http01-issuer
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+      {{- range .Values.whitelist }}
+      - {{ . | quote }}
+      {{- end }}
+      secretName: shopdit-web-http01-certificate
+  rules:
+    {{- range .Values.extTlsHosts }}
+    - host: {{ . | quote  }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ $.Values.app.service.name }}
+                port:
+                  number: 80
+    {{- end }}
+{{- end }}

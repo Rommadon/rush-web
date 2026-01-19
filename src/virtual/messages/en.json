@@ -1,0 +1,10 @@
+{
+  "virtual": {
+    "order": {
+      "success": {
+        "header": "Order Success",
+        "closeButton": "CLOSE MODAL"
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "navbar": {
+    "newIn": "New In",
+    "flashSale": "Flash Sale",
+    "promotion": "Promotion",
+    "loginBtn": "Login"
+  },
+  "footer": {
+    "companyName": "{companyName}",
+    "copyright": "© 2021, {merchantName}. Powered by Shopdit",
+    "followUs": "Follow us:",
+    "locale": "Language",
+    "contact": "Contact",
+    "termsAndPolicies": "Terms & Policies",
+    "aboutUs": "About us",
+    "privacyPolicy": "Privacy Policy",
+    "frequentlyAskedQuestions": "FAQ",
+    "contactUs": "Contact us"
+  },
+  "footerMobile": {
+    "home": "Home",
+    "products": "Products",
+    "orders": "Orders",
+    "notifications": "Notifications",
+    "myProfile": "My Profile"
+  },
+  "searchInput": {
+    "placeholder": "Search"
+  }
+}

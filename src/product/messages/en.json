@@ -1,0 +1,65 @@
+{
+  "home": {
+    "category": "Category",
+    "flashSale": "Flash Sale",
+    "catalog": "Catalog",
+    "more": "More",
+    "popularItems": "Popular",
+    "newIn": "New In",
+    "articles": "Article"
+  },
+  "flashSale": {
+    "remaining": "Remaining",
+    "sold": "Sold"
+  },
+  "summaryProducts": {
+    "recommended": "Recommended",
+    "bestSeller": "Best Seller",
+    "newIn": "New In",
+    "promoted": "Promotion",
+    "recentlyViewed": "Recently Viewed",
+    "item": "{item plural, =0 {no items} =1 {# item} other {# items}}",
+    "sortBy": "Sort By"
+  },
+  "productSearch": {
+    "filter": "Filter",
+    "category": "Category",
+    "brand": "Brand",
+    "searchResult": "Result",
+    "foundItems": "{result plural, =0 {no items} =1 {# item} other {# items}}",
+    "sortBy": "Sort By"
+  },
+  "productDetail": {
+    "sku": "SKU",
+    "detail": "Detail",
+    "category": "Category",
+    "unit": "Unit",
+    "stockRemaining": "Stock remaining",
+    "weight": "Weight",
+    "height": "Height",
+    "dimension": "Dimension",
+    "addToCart": "Add to cart",
+    "outOfStock": "Product out of stock",
+    "compare": "Compare",
+    "colors": "Colors",
+    "sizes": "Sizes",
+    "similarProducts": "Similar Products",
+    "set": "Set",
+    "more": "More",
+    "item": "{item plural, =0 {no items} =1 {# item} other {# items}}",
+    "packageModal": {
+      "title": "{item plural, =0 {no items} =1 {# item} other {# items}}"
+    }
+  },
+  "product": {
+    "comparisonSnackbar": {
+      "compare": "Compare"
+    },
+    "flashSale": {
+      "title": "FlashSale"
+    },
+    "cart": {
+      "title": "สรุปรายการสั่งซื้อ"
+    }
+  }
+}

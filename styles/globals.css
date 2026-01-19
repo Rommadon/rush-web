@@ -1,0 +1,381 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  /* font-family: 'Sarabun' !important; */
+  font-family: "Kanit", sans-serif !important;
+  font-display: swap;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.heart-fill {
+  filter: invert(16%) sepia(97%) saturate(7203%) hue-rotate(328deg) brightness(86%) contrast(102%);
+}
+
+@media only screen and (min-width: 1024px) {
+  .alice-product-detail .alice-carousel__wrapper {
+    height: 104px !important;
+  }
+}
+
+address {
+  font-style: normal;
+}
+
+.image-responsive {
+  max-width: 100%;
+  height: auto; 
+}
+
+.rounded {
+  border-radius: 8px;     
+}
+
+.img-cover {
+  object-fit: cover;
+}
+
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.alice-carousel__dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40px;
+}
+
+.responsive-img {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
+/* Make clicks pass-through */
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #29d;
+
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+  opacity: 1.0;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+      -ms-transform: rotate(3deg) translate(0px, -4px);
+          transform: rotate(3deg) translate(0px, -4px);
+}
+
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  top: 15px;
+  right: 15px;
+}
+
+#nprogress .spinner-icon {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+
+  border: solid 2px transparent;
+  border-top-color: #29d;
+  border-left-color: #29d;
+  border-radius: 50%;
+
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+          animation: nprogress-spinner 400ms linear infinite;
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+
+@-webkit-keyframes nprogress-spinner {
+  0%   { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes nprogress-spinner {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.rounded-2 {
+  border-radius: 8px;
+}
+
+.circle-2 {
+  border-radius: 45px;
+}
+
+.circle-3 {
+  border-radius: 50%;
+}
+
+
+.bank-bbl {
+  background-color: #1e4598;
+}
+
+.bank-kbank {
+  background-color: #138f2d;
+}
+
+.bank-rbs {
+  background-color: #032952;
+}
+
+.bank-ktb {
+  background-color: #1ba5e1;
+}
+
+.bank-jpm {
+  background-color: #321c10;
+}
+
+.bank-mufg {
+  background-color: #d61323;
+}
+
+.bank-tmb {
+  background-color: #1279be;
+}
+
+.bank-scb {
+  background-color: #4e2e7f;
+}
+
+.bank-citi {
+  background-color: #1583c7;
+}
+
+.bank-smbc {
+  background-color: #a0d235;
+}
+
+.bank-sc {
+  background-color: #0f6ea1;
+}
+
+.bank-cimb {
+  background-color: #7e2f36;
+}
+
+.bank-uob {
+  background-color: #0b3979;
+}
+
+.bank-uob {
+  background-color: #0b3979;
+}
+
+.bank-bay {
+  background-color: #fec43b;
+}
+
+.bank-mega {
+  background-color: #815e3b;
+}
+
+.bank-boa {
+  background-color: #e11e3c;
+}
+
+.bank-cacib {
+  background-color: #0e765b;
+}
+
+.bank-gsb {
+  background-color: #eb198d;
+}
+
+.bank-hsbc {
+  background-color: #fd0d1b;
+}
+
+.bank-db {
+  background-color: #0522a5;
+}
+
+.bank-ghb {
+  background-color: #f57d23;
+}
+
+.bank-baac {
+  background-color: #4b9b1d;
+}
+
+.bank-mb {
+  background-color: #150b78;
+}
+
+.bank-bnp {
+  background-color: #14925e;
+}
+
+.bank-tbank {
+  background-color: #fc4f1f;
+}
+
+.bank-ibank {
+  background-color: #184615;
+}
+
+.bank-tisco {
+  background-color: #12549f;
+}
+
+.bank-kk {
+  background-color: #199cc5;
+}
+
+.bank-icbc {
+  background-color: #c50f1c;
+}
+
+.bank-tcrb {
+  background-color: #0a4ab3;
+}
+
+.bank-lhb {
+  background-color: #6d6e71;
+}
+
+.bank-tmn {
+  background-color: #ecf0f1;
+}
+
+.bank-pp {
+  background-color: #00427a;
+}
+
+.MuiAlert-filledSuccess {
+  background-color: #14925e !important;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+.alice-carousel__prev-btn {
+  top: calc(50% - 27.5px);
+  /* left: 16px; */
+  position: absolute;
+  width: 50px;
+}
+
+.alice-carousel__next-btn {
+  top: calc(50% - 27.5px);
+  right: 10px;
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  width: 50px;
+}
+
+.MuiBottomNavigationAction-label {
+  font-size: 12px !important;
+  padding-top: 4px;
+}
+
+.MuiBottomNavigation-root {
+  height: 62px !important;
+}
+
+.article-detail img {
+  width: 100%;
+}
+
+.article-detail iframe {
+  max-width: 100%;
+}
+
+.CookieConsent {
+  background: #fffe !important;
+  border-radius: 20px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  padding: 20px 30px !important;
+  width: 95vw !important;
+  max-width: 800px !important;
+  -webkit-animation: lcc-bounce-up 1s ease !important;
+  position: fixed !important;
+  bottom: 18px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 2099999999 !important;
+  gap: 40px !important;
+  box-shadow: 0 0 40px 0 rgb(0 0 0 / 10%) !important;
+  box-sizing: border-box !important;
+  -webkit-backdrop-filter: saturate(200%) blur(20px) !important;
+  backdrop-filter: saturate(200%) blur(20px) !important;
+}
+
+.cookie-info {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  line-height: normal;
+}
+
+@media only screen and (max-width: 768px) {
+  .CookieConsent {
+    flex-wrap: wrap !important;
+    padding: 12px !important;
+    border-radius: 12px !important;
+    gap: 0 !important;
+    justify-content: center !important;
+  }
+
+  #rcc-confirm-button {
+    width: 300px;
+    margin-top: 8px !important;
+  }
+
+  .cookie-info-icon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    padding-right: 0 !important;
+    top: 20px;
+    right: 30px;
+  }
+}

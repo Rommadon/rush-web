@@ -1,0 +1,10 @@
+
+.git/
+node_modules/
+.next
+.env
+.DS_Store
+.env.local
+.env.develop
+.env.prod
+,env.staging

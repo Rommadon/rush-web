@@ -1,0 +1,32 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: shopdit-web-certificate
+  namespace: production
+spec:
+  secretName: shopdit-web-certificate
+  issuerRef:
+    name: shopdit-web-issuer
+    kind: Issuer
+    group: cert-manager.io
+  dnsNames:
+    - "*.myshopdit.com"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: shopdit-web-http01-certificate
+  namespace: production
+spec:
+  secretName: shopdit-web-http01-certificate
+  issuerRef:
+    name: shopdit-web-http01-issuer
+    kind: Issuer
+    group: cert-manager.io
+  dnsNames:
+    - "wsxr.shop"
+    - "www.wsxr.shop"
+    - "hejbonnie.com"
+    - "www.hejbonnie.com"
+    - "crobpro.com"
+    - "www.crobpro.com"

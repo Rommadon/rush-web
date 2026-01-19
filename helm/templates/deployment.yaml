@@ -1,0 +1,55 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  labels:
+    app: {{ .Values.app.name }}
+  name: {{ .Values.app.name }}
+  namespace: {{ .Values.app.namespace }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.app.name }}
+  template:
+    metadata:
+      annotations:
+        rollme: {{ randAlphaNum 5 | quote }}
+      labels:
+        app: {{ .Values.app.name }}
+    spec:
+      containers:
+        - name: {{ .Values.app.container.name }}
+          image: {{ .Values.app.container.image }}
+          resources:
+            limits:
+              cpu: {{ .Values.app.container.resources.limits.cpu }}
+              memory: {{ .Values.app.container.resources.limits.memory }}
+            requests:
+              cpu: {{ .Values.app.container.resources.requests.cpu }}
+              memory: {{ .Values.app.container.resources.requests.memory }}
+          imagePullPolicy: Always
+          env:
+            - name: NODE_ENV
+              valueFrom:
+                configMapKeyRef:
+                  name: shopdit-web-config
+                  key: node-env
+            - name: API_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: shopdit-web-config
+                  key: api-host
+            - name: INTERNAL_API_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: shopdit-web-config
+                  key: internal-api-host
+            - name: SENTRY_DSN
+              valueFrom:
+                configMapKeyRef:
+                  name: shopdit-web-config
+                  key: sentry-dsn
+          ports:
+            - containerPort: 3000
+      nodeSelector:
+        "node.pool": {{ .Values.app.pool }}
+      restartPolicy: Always

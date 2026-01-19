@@ -1,0 +1,10 @@
+import { FC } from "react";
+import { SvgIcon, SvgIconProps } from "@mui/material";
+
+export const HeartFillIcon: FC<SvgIconProps> = (props) => {
+  return (
+    <SvgIcon {...props}>
+      <path d="M269,66.5A268.72,268.72,0,0,0,79.11,525.25L478.44,924.58a30.52,30.52,0,0,0,43,.12.67.67,0,0,1,.06-.12L920.83,525.25A268.77,268.77,0,0,0,731.05,66.5h-.24a267.52,267.52,0,0,0-190,78.79L499.94,186l-40.8-40.74A267.63,267.63,0,0,0,269.06,66.5Zm0,0"/>
+    </SvgIcon>
+  );
+};

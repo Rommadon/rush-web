@@ -1,0 +1,40 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: shopdit-web-issuer
+  namespace: production
+spec:
+  acme:
+    email: support@shopdit.com
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: letsencrypt-nginx-private-key
+    solvers:
+      - dns01:
+          route53:
+            accessKeyID: AKIAWIKAMKS6ECEVBDVD
+            region: ap-southeast-1
+            secretAccessKeySecretRef:
+              name: route53-secret
+              key: secret-access-key
+            hostedZoneID: Z0196055IJ4YVYLVJ2QV
+---
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: shopdit-web-http01-issuer
+  namespace: production
+spec:
+  acme:
+    email: support@shopdit.com
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: letsencrypt-nginx-private-key
+    solvers:
+      - http01:
+          ingress:
+            ingressClassName: nginx
+            podTemplate:
+              spec:
+                nodeSelector:
+                  "node.pool": production-pools

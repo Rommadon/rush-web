@@ -1,0 +1,10 @@
+{
+  "virtual": {
+    "order": {
+      "success": {
+        "header": "คำสั่งซื้อสำเร็จ",
+        "closeButton": "ปิดหน้าต่าง"
+      }
+    }
+  }
+}

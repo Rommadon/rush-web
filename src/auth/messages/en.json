@@ -1,0 +1,27 @@
+{
+  "auth": {
+    "authModal": {
+      "title": "Login / Register",
+      "phoneNumber": "Phone Number",
+      "sendOtp": "Send OTP",
+      "footer": "*ท่านสามารถสั่งซื้อได้ โดยไม่เป็นสมาชิก แต่จะไม่สามารถรับสิทธิประโยชน์บางอย่างจากร้านค้าได้",
+      "loginWithOtp": "Change to login with OTP",
+      "loginWithPassword": "Change to login with password",
+      "password": "Password",
+      "or": "OR",
+      "login": "Login",
+      "identityVerification": "Verify OTP"
+    }
+  },
+  "verify_page": {
+    "verify_customer": "User Verification",
+    "system_verifying": "The system is currently verifying your user account",
+    "verify_success": "User verification successful",
+    "will_redirect_homepage": "The system will redirect to the homepage in",
+    "seconds": "seconds",
+    "redirect_homepage": "Redirecting to the homepage",
+    "verify_failed": "User verification failed",
+    "contact_support": "Please contact customer support",
+    "thank_you": "Thank you for using"
+  }
+}

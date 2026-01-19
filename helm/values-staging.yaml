@@ -1,0 +1,37 @@
+app:
+  name: shopdit-web
+  namespace: staging
+  pool: staging-pools
+  replicas: 1
+  container:
+    name: "shopdit-web-container"
+    image: "registry.digitalocean.com/shopdit/shopdit-web:latest"
+    resources:
+      requests:
+        cpu: "0.25" # ลด CPU requests
+        memory: "256Mi" # ลด memory requests
+      limits:
+        cpu: "0.5" # ลด CPU limits
+        memory: "512Mi" # ลด memory limits
+  service:
+    name: "shopdit-web-service"
+  ingress:
+    name: "shopdit-web-ingress"
+ingress:
+  host: "*.staging.myshopdit.com"
+certificate:
+  name: "shopdit-web-certificate"
+  commonName: "api.staging.shopdit.com"
+  dnsNames:
+    - "api.staging.shopdit.com"
+issuer:
+  name: "shopdit-web-issuer"
+extTlsHosts:
+  - "www.shopdit.world"
+hpa:
+  enabled: false
+extHost:
+  enabled: true
+  whitelist:
+    - "www.shopdit.world"
+    - "shopdit.world"

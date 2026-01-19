@@ -1,0 +1,44 @@
+app:
+  name: shopdit-web
+  namespace: production
+  pool: production-pools
+  container:
+    name: "shopdit-web-container"
+    image: "registry.digitalocean.com/shopdit/shopdit-web:latest"
+    resources:
+      requests:
+        cpu: "2"
+        memory: "3Gi"
+      limits:
+        cpu: "3"
+        memory: "4Gi"
+  service:
+    name: "shopdit-web-service"
+  ingress:
+    name: "shopdit-web-ingress"
+ingress:
+  host: "*.myshopdit.com"
+certificate:
+  name: "shopdit-web-certificate"
+issuer:
+  name: "shopdit-web-issuer"
+hpa:
+  enabled: true
+  name: "shopdit-web-hpa"
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
+extTlsHosts:
+  - "wsxr.shop"
+  - "hejbonnie.com"
+  - "crobpro.com"
+extHost:
+  enabled: true
+  whitelist:
+    - "www.wsxr.shop"
+    - "wsxr.shop"
+    - "www.hejbonnie.com"
+    - "hejbonnie.com"
+    - "www.crobpro.com"
+    - "crobpro.com"

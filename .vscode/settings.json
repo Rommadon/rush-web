@@ -1,0 +1,14 @@
+{
+  "conventionalCommits.scopes": [
+    "chat",
+    "voucher",
+    "deploy",
+    "setting",
+    "verify-email",
+    "auth",
+    "user"
+  ],
+  "cSpell.words": [
+    "shopdit"
+  ]
+}
