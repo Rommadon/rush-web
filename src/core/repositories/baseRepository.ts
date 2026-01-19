@@ -10,13 +10,13 @@ export class BaseRepository {
       this.fetcher.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
     }
 
-    if (host && ['lvh', 'staging.myshopdit', 'myshopdit'].includes(host.split('.').slice(1, -1).join('.'))) {
+    if (host && ['lvh', 'staging.myshopdit', 'myshopdit', 'rushbps'].includes(host.split('.').slice(1, -1).join('.'))) {
       this.fetcher.defaults.headers.common['CurrentMerchantSlug'] = host.split('.')[0];
       delete this.fetcher.defaults.headers.common['CurrentMerchantDomain'];
     } else {
       this.fetcher.defaults.headers.common['CurrentMerchantSlug'] = '';
-      if (host && !host.includes('myshopdit.com')) {
-        this.fetcher.defaults.headers.common['CurrentMerchantDomain'] = host.split('/')[0].replace('www.','');
+      if (host && !host.includes('myshopdit.com') && !host.includes('rushbps.com')) {
+        this.fetcher.defaults.headers.common['CurrentMerchantDomain'] = host.split('/')[0].replace('www.', '');
       }
     }
 
@@ -25,7 +25,7 @@ export class BaseRepository {
         const url = config.baseURL + config.url
         const method = config.method.toUpperCase()
 
-        console.log(new Date().toISOString(),`request: [${method}] ${url}`)
+        console.log(new Date().toISOString(), `request: [${method}] ${url}`)
 
         return config
       })

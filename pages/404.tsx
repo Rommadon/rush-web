@@ -10,12 +10,12 @@ export default function InternalServerErrorPage() {
 
   useEffect(() => {
     async function fetchMerchant() {
-      if (window.location.href && ['lvh', 'staging.myshopdit', 'myshopdit'].includes(window.location.href.split('.').slice(1, -1).join('.'))) {
+      if (window.location.href && ['lvh', 'staging.myshopdit', 'myshopdit', 'rushbps'].includes(window.location.href.split('.').slice(1, -1).join('.'))) {
         const merchantSlug = window.location.href.split('//')[1].split('.')[0];
         const host = window.location.href.split('//')[1];
         let merchantDomain = {};
 
-        if (host && !host.includes('myshopdit.com')) {
+        if (host && !host.includes('myshopdit.com') && !host.includes('rushbps.com')) {
           merchantDomain = {
             'CurrentMerchantDomain': host.split('/')[0].replace('www.','')
           };

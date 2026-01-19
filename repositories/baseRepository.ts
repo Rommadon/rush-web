@@ -14,7 +14,7 @@ export class BaseRepository {
       delete this.fetcher.defaults.headers.common['CurrentMerchantDomain'];
     } else {
       this.fetcher.defaults.headers.common['CurrentMerchantSlug'] = '';
-      if (host && !host.includes('myshopdit.com')) {
+      if (host && !host.includes('myshopdit.com') && !host.includes('rushbps.com')) {
         this.fetcher.defaults.headers.common['CurrentMerchantDomain'] = host.split('/')[0].replace('www.', '');
       }
     }
