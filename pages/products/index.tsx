@@ -16,30 +16,44 @@ export const getServerSideProps = getProps({
   loginRequired: false,
   resolver: async (context, accessToken) => {
     try {
+      // Enable edge caching: cache for 60s, serve stale while revalidating for 5mins
+      context.res.setHeader(
+        'Cache-Control',
+        'public, s-maxage=60, stale-while-revalidate=300'
+      );
+
       const productRepository = new ProductRepository(accessToken, context.req.headers.host);
       const productCategoryRepository = new ProductCategoryRepository(accessToken, context.req.headers.host);
       const productBrandRepository = new ProductBrandRepository(accessToken, context.req.headers.host);
       const catalogRepository = new CatalogRepository(accessToken, context.req.headers.host);
 
-      const products = await productRepository.getProducts({
-        page: context.query?.page || 1,
-        limit: context.query?.limit || 30,
-        search: context.query?.search || '',
-        productCategoryIds: context.query?.productCategoryIds || '',
-        productBrandIds: context.query?.productBrandIds || '',
-        productCatalogIds: context.query?.productCatalogIds || '',
-        orderBy: context.query?.orderBy || 'bestSeller',
-        withPagination: "true"
-      });
-      const productCategories = await productCategoryRepository.getProductCategories({
-        withPagination: 'false'
-      });
-      const productBrands = await productBrandRepository.getProductCategories({
-        withPagination: 'false'
-      });
-      const catalogs = await catalogRepository.getCatalogs({
-        withPagination: 'false'
-      })
+      // Parallelize all API calls for faster response
+      const [productsResult, productCategoriesResult, productBrandsResult, catalogsResult] = await Promise.allSettled([
+        productRepository.getProducts({
+          page: context.query?.page || 1,
+          limit: context.query?.limit || 30,
+          search: context.query?.search || '',
+          productCategoryIds: context.query?.productCategoryIds || '',
+          productBrandIds: context.query?.productBrandIds || '',
+          productCatalogIds: context.query?.productCatalogIds || '',
+          orderBy: context.query?.orderBy || 'bestSeller',
+          withPagination: "true"
+        }),
+        productCategoryRepository.getProductCategories({
+          withPagination: 'false'
+        }),
+        productBrandRepository.getProductCategories({
+          withPagination: 'false'
+        }),
+        catalogRepository.getCatalogs({
+          withPagination: 'false'
+        })
+      ]);
+
+      const products = productsResult.status === 'fulfilled' ? productsResult.value : { data: [], meta: {} };
+      const productCategories = productCategoriesResult.status === 'fulfilled' ? productCategoriesResult.value : { data: [] };
+      const productBrands = productBrandsResult.status === 'fulfilled' ? productBrandsResult.value : { data: [] };
+      const catalogs = catalogsResult.status === 'fulfilled' ? catalogsResult.value : { data: [] };
 
       return {
         props: {
