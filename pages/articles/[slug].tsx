@@ -12,6 +12,12 @@ export const getServerSideProps = getProps({
   loginRequired: false,
   resolver: async (context, accessToken) => {
     try {
+      // Enable edge caching: cache for 60s, serve stale while revalidating for 5mins
+      context.res.setHeader(
+        'Cache-Control',
+        'public, s-maxage=60, stale-while-revalidate=300'
+      );
+
       const responses = await Promise.allSettled([
         // @ts-ignore
         new ArticleRepository(accessToken, context.req.headers.host).getArticle({ slug: context.params.slug }),
