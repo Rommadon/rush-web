@@ -18,6 +18,12 @@ export const getServerSideProps = getProps({
   loginRequired: false,
   resolver: async (context, accessToken) => {
     try {
+      // Enable edge caching: cache for 60s, serve stale while revalidating for 5mins
+      context.res.setHeader(
+        'Cache-Control',
+        'public, s-maxage=60, stale-while-revalidate=300'
+      );
+
       let cart = {
         data: []
       }
@@ -28,12 +34,27 @@ export const getServerSideProps = getProps({
       const cartRepository = new CartRepository(accessToken, context.req.headers.host);
       const customerProductFavoriteRepository = new CustomerProductFavoriteRepository(accessToken, context.req.headers.host);
 
-      const product = await productRepository.getProduct(context?.params?.slug);
-      const productsRelation = await productRepository.getProductsRelation(context?.params?.slug);
+      // Parallelize API calls for faster response
+      const apiCalls = [
+        productRepository.getProduct(context?.params?.slug),
+        productRepository.getProductsRelation(context?.params?.slug)
+      ];
+
+      // Add authenticated calls if user is logged in
+      if (accessToken && accessToken !== '') {
+        apiCalls.push(
+          cartRepository.getCart(),
+          customerProductFavoriteRepository.getCustomerProductFavorites()
+        );
+      }
+
+      const results = await Promise.allSettled(apiCalls);
+      const product = results[0].status === 'fulfilled' ? results[0].value : { data: null };
+      const productsRelation = results[1].status === 'fulfilled' ? results[1].value : { data: [] };
 
       if (accessToken && accessToken !== '') {
-        cart = await cartRepository.getCart();
-        customerProductFavorite = await customerProductFavoriteRepository.getCustomerProductFavorites();
+        cart = results[2]?.status === 'fulfilled' ? results[2].value : { data: [] };
+        customerProductFavorite = results[3]?.status === 'fulfilled' ? results[3].value : { data: [] };
       }
 
       return {

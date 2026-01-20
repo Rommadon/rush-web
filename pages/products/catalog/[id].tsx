@@ -13,6 +13,12 @@ export const getServerSideProps = getProps({
   loginRequired: false,
   resolver: async (context, accessToken) => {
     try {
+      // Enable edge caching: cache for 60s, serve stale while revalidating for 5mins
+      context.res.setHeader(
+        'Cache-Control',
+        'public, s-maxage=60, stale-while-revalidate=300'
+      );
+
       const catalogRepository = new CatalogRepository(accessToken, context.req.headers.host);
       const catalog = await catalogRepository.getCatalog({
         id: context?.params?.id,
