@@ -90,20 +90,6 @@ export default function InternalServerErrorPage() {
               </NextLink>
             </Box>
           </Box>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <NextLink href={"https://www.shopdit.com"}>
-              <Button
-                variant="contained"
-                size={isDesktop ? "large" : "small"}
-                sx={{
-                  backgroundColor: "#0971fe",
-                  color: "white",
-                }}
-              >
-                เปิดร้านค้ากับเรา
-              </Button>
-            </NextLink>
-          </Box>
         </Box>
       </Box>
       <Box
