@@ -24,7 +24,6 @@ export type SummaryProductProp = {
   promotedProducts: Product[];
   recentlyViewedProducts: Product[];
   showAction?: boolean;
-  openRegisterPhoneModal: (p: any) => any;
 };
 
 export const SummaryProducts: FC<SummaryProductProp> = (props) => {
@@ -122,11 +121,8 @@ export const SummaryProducts: FC<SummaryProductProp> = (props) => {
                   <SummaryProductCard
                     {...product}
                     {...(isDesktop ? {} : { width: "100%", height: 163 })}
-                    onClick={
-                      getProductStock(product.productItems) > 0
-                        ? () =>
-                            router.push(routes.product({ slug: product.slug }))
-                        : () => props.openRegisterPhoneModal(product)
+                    onClick={() =>
+                      router.push(routes.product({ slug: product.slug }))
                     }
                   />
                   {/* </a> */}

@@ -46,7 +46,6 @@ import { ProductSearchAccordion } from "./ProductSearchAccordion";
 import { SummaryProductCard } from "./SummaryProductCard";
 import { ProductSearchModal } from "./ProductSearchModal";
 import { useResource, SearchInput, useAuth, CartContext } from "src";
-import RegisterPhoneModal from "src/auth/components/RegisterPhoneModal";
 
 export type ProductSearchProps = DefaultLayoutProp & {
   productCategories: ProductCategory[];
@@ -93,10 +92,6 @@ export const ProductSearch: FC<ProductSearchProps> = (props) => {
   const [onDisableLoading, setOnDisableLoading] = useState(
     props?.onDisableLoading || false
   );
-  const [isOpenRegisterPhoneModal, setIsOpenRegisterPhoneModal] =
-    useState(false);
-
-  const [productPush, setProductPush] = useState(null);
 
   const { register, handleSubmit, watch } = useForm();
   const onSubmit = (data: any) => console.log(data);
@@ -467,15 +462,6 @@ export const ProductSearch: FC<ProductSearchProps> = (props) => {
     }
   }, [props?.query?.tap]);
 
-  const openRegisterPhoneModal = (product: any) => {
-    if (isAuth) {
-      Router.push(routes.product({ slug: product.slug }));
-    } else {
-      setIsOpenRegisterPhoneModal(true);
-      setProductPush(product);
-    }
-  };
-
   return (
     <DefaultLayout
       {...props}
@@ -581,12 +567,6 @@ export const ProductSearch: FC<ProductSearchProps> = (props) => {
         </AppBar>
       }
     >
-      <RegisterPhoneModal
-        open={isOpenRegisterPhoneModal}
-        isDesktop={isDesktop}
-        product={productPush}
-        handleClose={() => setIsOpenRegisterPhoneModal(false)}
-      />
       <ProductSearchModal
         open={productSearchModalOpen}
         historyKeywords={historyKeyword}
@@ -1050,7 +1030,7 @@ export const ProductSearch: FC<ProductSearchProps> = (props) => {
                             </a>
                           </NextLink>
                         ) : (
-                          <a onClick={() => openRegisterPhoneModal(product)}>
+                          <a onClick={() => Router.push(routes.product({ slug: product.slug }))}>
                             <SummaryProductCard
                               key={product.id}
                               {...product}

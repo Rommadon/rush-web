@@ -16,6 +16,13 @@ export type Product = {
   images?: string[];
   price: number;
   fullPrice: number;
+  isContactOnly?: boolean;
+  telContact?: string | null;
+  emailContact?: string | null;
+  lineContact?: string | null;
+  facebookContact?: string | null;
+  instagramContact?: string | null;
+  urlGoogleMap?: string | null;
   isLike: boolean;
   soldQuantity: number;
   remaining: number;

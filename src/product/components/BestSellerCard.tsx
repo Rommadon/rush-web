@@ -98,7 +98,7 @@ export const BestSellerCard: FC<Product & BestSellerCardProps> = (props) => {
         position="relative"
         onClick={() => onClickProduct()}
       >
-        {/* {isOutOfStock && (
+        {isOutOfStock && (
           <>
             <Box
               sx={{
@@ -125,7 +125,7 @@ export const BestSellerCard: FC<Product & BestSellerCardProps> = (props) => {
               สินค้าหมด
             </Typography>
           </>
-        )} */}
+        )}
         <ProductBadges
           badgeLeftText={badgeLeftText}
           badgeRightText={badgeRightText}

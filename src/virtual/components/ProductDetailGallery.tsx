@@ -104,16 +104,20 @@ export const ProductDetailGallery: FC<{ images: ProductImage[] }> = (props) => {
                 width="100%"
                 position="relative"
               >
-                <NextImage
-                  src={image.imageUpload.url}
-                  alt={image.imageUpload.name}
-                  width={375}
-                  height={375}
-                  layout="responsive"
-                  priority
-                  placeholder="blur"
-                  blurDataURL={image.imageUpload.url || "/new-in-placeholder.svg"}
-                />
+                {
+                  image.imageUpload && (
+                    <NextImage
+                      src={image.imageUpload?.url}
+                      alt={image.imageUpload?.name}
+                      width={375}
+                      height={375}
+                      layout="responsive"
+                      priority
+                      placeholder="blur"
+                      blurDataURL={image.imageUpload?.url || "/new-in-placeholder.svg"}
+                    />
+                  )
+                }
               </Box>
             </Box>
           ))}

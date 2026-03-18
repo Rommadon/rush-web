@@ -14,7 +14,6 @@ import { useTranslations } from "next-intl";
 
 export type NewProductProps = {
   newProducts: Product[];
-  openRegisterPhoneModal: (p: any) => any;
 };
 
 export const NewProductComponent = (props: NewProductProps) => {
@@ -82,11 +81,8 @@ export const NewProductComponent = (props: NewProductProps) => {
                   {console.log("prod", product)}
                   <NewInCard
                     {...product}
-                    onClick={
-                      getProductStock(product.productItems) > 0
-                        ? () =>
-                            router.push(routes.product({ slug: product.slug }))
-                        : () => props.openRegisterPhoneModal(product)
+                    onClick={() =>
+                      router.push(routes.product({ slug: product.slug }))
                     }
                   />
                 </Box>

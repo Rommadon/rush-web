@@ -9,7 +9,6 @@ export type SummaryProductProps = {
   bestSellerProducts: Product[];
   newProducts: Product[];
   discountProducts: Product[];
-  openRegisterPhoneModal: (p: any) => any;
 };
 
 export const SummaryProductComponent = (props: SummaryProductProps) => {
@@ -31,7 +30,6 @@ export const SummaryProductComponent = (props: SummaryProductProps) => {
         bestSellerProducts={props.bestSellerProducts}
         newInProducts={props.newProducts}
         promotedProducts={props.discountProducts}
-        openRegisterPhoneModal={props.openRegisterPhoneModal}
         recentlyViewedProducts={[]}
       />
     </Box>

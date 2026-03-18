@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState, Fragment } from "react";
 import { useMediaQuery } from "@mui/material";
 import { useTranslations } from "next-intl";
 import router from "next/router";
@@ -15,7 +15,6 @@ import {
 } from "../../product/models";
 import { ArticleModel } from "src/article";
 import VerifyEmailModal from "src/auth/components/VerifyEmailModal";
-import RegisterPhoneModal from "src/auth/components/RegisterPhoneModal";
 import { useAuth } from "src/auth";
 import { BannerComponent } from "../components/Banner";
 import { SummaryProductComponent } from "../components/SummaryProduct";
@@ -26,6 +25,8 @@ import { NewProductComponent } from "../components/NewIn";
 import { BestSaleProductComponent } from "../components/BestSale";
 import { FlashSaleComponent } from "../components/FlashSale";
 import { CategoryComponent } from "../components/Category";
+import { BrandComponent } from "../components/Brand";
+import { ProductBrand } from "src/product/models";
 
 export type HomeProp = DefaultLayoutProp & {
   bannerMerchants: BannerMerhchant[];
@@ -35,6 +36,7 @@ export type HomeProp = DefaultLayoutProp & {
   discountProducts: Product[];
   bestSellerProducts: Product[];
   recommendProducts: Product[];
+  productBrands: ProductBrand[];
   bannerPromotions: BannerPromotion[];
   flashSale: FlashSale;
   articles: ArticleModel[];
@@ -52,22 +54,10 @@ export const Home: FC<HomeProp> = (props) => {
   const { profile } = useAuth();
   const [isMediaLoading, setIsMediaLoading] = useState(true);
   const [isVerifyEmailModalOpen, setIsVerifyEmailModalOpen] = useState(false);
-  const [isOpenRegisterPhoneModal, setIsOpenRegisterPhoneModal] =
-    useState(false);
-  const [productPush, setProductPush] = useState(null);
 
   useEffect(() => {
     setIsMediaLoading(false);
   }, []);
-
-  const openRegisterPhoneModal = (product: any) => {
-    if (profile) {
-      router.push(routes.product({ slug: product.slug }));
-    } else {
-      setIsOpenRegisterPhoneModal(true);
-      setProductPush(product);
-    }
-  };
 
   useEffect(() => {
     if (profile) {
@@ -98,6 +88,15 @@ export const Home: FC<HomeProp> = (props) => {
       ),
     },
     {
+      key: "home_product_brand",
+      component: (
+        <BrandComponent
+          productBrands={props.productBrands}
+          isMediaLoading={isMediaLoading}
+        />
+      ),
+    },
+    {
       key: "home_flash_sale",
       component: <FlashSaleComponent flashSale={props.flashSale} />,
     },
@@ -112,7 +111,6 @@ export const Home: FC<HomeProp> = (props) => {
       component: (
         <BestSaleProductComponent
           bestSellerProducts={props.bestSellerProducts}
-          openRegisterPhoneModal={openRegisterPhoneModal}
         />
       ),
     },
@@ -134,7 +132,6 @@ export const Home: FC<HomeProp> = (props) => {
       component: (
         <NewProductComponent
           newProducts={props.newProducts}
-          openRegisterPhoneModal={openRegisterPhoneModal}
         />
       ),
     },
@@ -159,7 +156,6 @@ export const Home: FC<HomeProp> = (props) => {
           bestSellerProducts={props.bestSellerProducts}
           newProducts={props.newProducts}
           discountProducts={props.discountProducts}
-          openRegisterPhoneModal={openRegisterPhoneModal}
         />
       ),
     },
@@ -168,12 +164,6 @@ export const Home: FC<HomeProp> = (props) => {
   return (
     <>
       <VerifyEmailModal open={isVerifyEmailModalOpen} />
-      <RegisterPhoneModal
-        open={isOpenRegisterPhoneModal}
-        isDesktop={isDesktop}
-        product={productPush}
-        handleClose={() => setIsOpenRegisterPhoneModal(false)}
-      />
       <DefaultLayout {...props} isHomePage>
         <BannerComponent bannerMerchants={props.bannerMerchants} />
         {!props.themeWidgets || props.themeWidgets?.length === 0
@@ -184,8 +174,17 @@ export const Home: FC<HomeProp> = (props) => {
               const section = sections.find(
                 (section) => section.key === item?.widget?.key
               );
-              if (!section) return <></>;
-              return <section key={section?.key}>{section?.component}</section>;
+              if (!section) return <Fragment key={item?.widget?.key}></Fragment>;
+              return (
+                <Fragment key={section?.key}>
+                  <section>{section?.component}</section>
+                  {section?.key === "home_product_category" && (
+                    <section>
+                      {sections.find((s) => s.key === "home_product_brand")?.component}
+                    </section>
+                  )}
+                </Fragment>
+              );
             })}
       </DefaultLayout>
     </>

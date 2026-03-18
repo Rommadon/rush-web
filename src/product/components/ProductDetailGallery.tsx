@@ -12,8 +12,9 @@ export const DynamicCarousel = dynamic(
 import { ProductImage } from "../models";
 import NextIcon from "src/core/components/NextIcon";
 import PrevIcon from "src/core/components/PrevIcon";
+import { Typography } from "@mui/material";
 
-export const ProductDetailGallery: FC<{ images: ProductImage[] }> = (props) => {
+export const ProductDetailGallery: FC<{ images: ProductImage[], isOutOfStock?: boolean }> = (props) => {
   const productImage = props?.images?.find((image) => image.order === 0)
     ?.imageUpload?.url;
 
@@ -83,7 +84,34 @@ export const ProductDetailGallery: FC<{ images: ProductImage[] }> = (props) => {
   return (
     <Box width="100%" className="alice-product-detail">
       {isDesktop && (
-        <Box overflow="hidden">
+        <Box overflow="hidden" position="relative">
+          {props.isOutOfStock && (
+            <>
+              <Box
+                sx={{
+                  position: "absolute",
+                  zIndex: 2,
+                  backgroundColor: "black",
+                  height: "100%",
+                  width: "100%",
+                  opacity: 0.5,
+                }}
+              ></Box>
+              <Typography
+                color="white"
+                variant="h3"
+                sx={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  zIndex: 3,
+                }}
+              >
+                สินค้าหมด
+              </Typography>
+            </>
+          )}
           <NextImage
             src={selectedImage}
             width={300}
@@ -104,16 +132,47 @@ export const ProductDetailGallery: FC<{ images: ProductImage[] }> = (props) => {
                 width="100%"
                 position="relative"
               >
-                <NextImage
-                  src={image.imageUpload.url}
-                  alt={image.imageUpload.name}
-                  width={375}
-                  height={375}
-                  layout="responsive"
-                  priority
-                  placeholder="blur"
-                  blurDataURL={image.imageUpload.url || "/new-in-placeholder.svg"}
-                />
+                {props.isOutOfStock && (
+                  <>
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        zIndex: 2,
+                        backgroundColor: "black",
+                        height: "100%",
+                        width: "100%",
+                        opacity: 0.5,
+                      }}
+                    ></Box>
+                    <Typography
+                      color="white"
+                      variant="h3"
+                      sx={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        zIndex: 3,
+                      }}
+                    >
+                      สินค้าหมด
+                    </Typography>
+                  </>
+                )}
+                {
+                  image.imageUpload && (
+                    <NextImage
+                      src={image.imageUpload?.url}
+                      alt={image.imageUpload?.name}
+                      width={375}
+                      height={375}
+                      layout="responsive"
+                      priority
+                      placeholder="blur"
+                      blurDataURL={image.imageUpload?.url || "/new-in-placeholder.svg"}
+                    />
+                  )
+                }
               </Box>
             </Box>
           ))}

@@ -14,7 +14,6 @@ import { BestSellerCardMock } from "src/product/components/BestSellerCardMock";
 
 export type BestSaleProductProps = {
   bestSellerProducts: Product[];
-  openRegisterPhoneModal: (p: any) => any;
 };
 
 export const BestSaleProductComponent = (props: BestSaleProductProps) => {
@@ -66,11 +65,8 @@ export const BestSaleProductComponent = (props: BestSaleProductProps) => {
               >
                 <BestSellerCard
                   {...product}
-                  onClick={
-                    getProductStock(product.productItems) > 0
-                      ? () =>
-                          router.push(routes.product({ slug: product.slug }))
-                      : () => props.openRegisterPhoneModal(product)
+                  onClick={() =>
+                    router.push(routes.product({ slug: product.slug }))
                   }
                 />
               </Box>

@@ -24,8 +24,7 @@ import {
 } from "react-hook-form";
 import { AuthContext } from "src";
 import Image from "next/image";
-import phoneIcon from "public/icons/phone.svg";
-import chatIcon from "public/icons/chat.svg";
+import { ContactUsDrawer } from "../../ContactUsDrawer";
 
 export type SingleProductDetailFormProp = {
   productPrimaryOption?: ProductPrimaryOption;
@@ -284,8 +283,7 @@ export const SingleProductDetailForm: FC<SingleProductDetailFormProp> = (
 
           <Box width="16px" />
 
-          {productItem?.stock?.remaining !== undefined &&
-          productItem?.stock?.remaining < 1 ? (
+          {props.product?.isContactOnly ? (
             <Button
               variant="contained"
               disableElevation
@@ -295,13 +293,23 @@ export const SingleProductDetailForm: FC<SingleProductDetailFormProp> = (
               onClick={() => setIsShowContact(true)}
               sx={{ borderRadius: "8px", width: "100%" }}
             >
-              {props.onLoading ? (
-                <CircularProgress color="info" />
-              ) : (
-                <Typography color="white" variant="h4">
-                  ติดต่อเรา
-                </Typography>
-              )}
+              <Typography color="white" variant="h4">
+                ติดต่อเรา
+              </Typography>
+            </Button>
+          ) : productItem?.stock?.remaining !== undefined &&
+          productItem?.stock?.remaining < 1 ? (
+            <Button
+              variant="contained"
+              disableElevation
+              color="primary"
+              type="button"
+              disabled={true}
+              sx={{ borderRadius: "8px", width: "100%" }}
+            >
+              <Typography color="white" variant="h4">
+                สินค้าหมด
+              </Typography>
             </Button>
           ) : (
             <Button
@@ -376,8 +384,7 @@ export const SingleProductDetailForm: FC<SingleProductDetailFormProp> = (
               />
             </Box>
           </Box>
-          {productItem?.stock?.remaining !== undefined &&
-          productItem?.stock?.remaining <= 0 ? (
+          {props.product?.isContactOnly ? (
             <Button
               variant="contained"
               disableElevation
@@ -388,13 +395,24 @@ export const SingleProductDetailForm: FC<SingleProductDetailFormProp> = (
               fullWidth
               sx={{ borderRadius: "8px", py: "16px" }}
             >
-              {props.onLoading ? (
-                <CircularProgress color="info" />
-              ) : (
-                <Typography color="white" variant="h4">
-                  ติดต่อเรา
-                </Typography>
-              )}
+              <Typography color="white" variant="h4">
+                ติดต่อเรา
+              </Typography>
+            </Button>
+          ) : productItem?.stock?.remaining !== undefined &&
+          productItem?.stock?.remaining <= 0 ? (
+            <Button
+              variant="contained"
+              disableElevation
+              color="primary"
+              type="button"
+              disabled={true}
+              fullWidth
+              sx={{ borderRadius: "8px", py: "16px" }}
+            >
+              <Typography color="white" variant="h4">
+                สินค้าหมด
+              </Typography>
             </Button>
           ) : (
             <Button
@@ -425,80 +443,12 @@ export const SingleProductDetailForm: FC<SingleProductDetailFormProp> = (
           )}
         </>
       )}
-      <SwipeableDrawer
-        anchor={"bottom"}
+      <ContactUsDrawer
         open={isShowContact}
         onClose={() => setIsShowContact(false)}
         onOpen={() => setIsShowContact(true)}
-      >
-        <Box
-          textAlign="center"
-          display={"flex"}
-          alignItems={"center"}
-          margin={3}
-          marginBottom={5}
-          flexDirection={"column"}
-        >
-          <Typography variant="h3" marginBottom={4}>
-            ติดต่อเรา
-          </Typography>
-          {currentMerchant?.data?.tel && (
-            <Box
-              border={"1px solid #000000"}
-              borderRadius="16px"
-              width={"70%"}
-              p="8px 16px"
-              display={"flex"}
-              alignItems={"center"}
-              justifyContent={"space-between"}
-              marginBottom={2}
-              onClick={() => {
-                window.open(
-                  `tel: +66${currentMerchant?.data?.tel
-                    .slice(1)
-                    .split(" ")
-                    .join("")}`,
-                  "_blank"
-                );
-              }}
-              sx={{ cursor: "pointer" }}
-            >
-              <Box>
-                <Image src={phoneIcon} alt="chat icon" />
-              </Box>
-              <Typography variant="h4">{currentMerchant?.data?.tel}</Typography>
-              <Box></Box>
-            </Box>
-          )}
-          {currentMerchant?.data?.chatContract && (
-            <Box
-              border={"1px solid #000000"}
-              borderRadius="16px"
-              width={"70%"}
-              p="8px 16px"
-              display={"flex"}
-              alignItems={"center"}
-              justifyContent={"space-between"}
-              onClick={() => {
-                window.open(
-                  "https://" +
-                    currentMerchant?.data?.chatContract
-                      .replace("https://", "")
-                      .replace("http://", ""),
-                  "_blank"
-                );
-              }}
-              sx={{ cursor: "pointer" }}
-            >
-              <Box>
-                <Image src={chatIcon} alt="phone icon" />
-              </Box>
-              <Typography variant="h4">Chat</Typography>
-              <Box></Box>
-            </Box>
-          )}
-        </Box>
-      </SwipeableDrawer>
+        product={props.product}
+      />
     </form>
   );
 };

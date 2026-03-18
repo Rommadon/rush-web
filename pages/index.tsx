@@ -13,6 +13,7 @@ import {
   MerchantRepository,
   BannerPromotionRepository,
   FlashSaleRepository,
+  ProductBrandRepository,
 } from "../repositories";
 import ThemeWidgetRepository from "repositories/themeWidgetRepository";
 
@@ -66,6 +67,10 @@ export const getServerSideProps = getProps({
         accessToken,
         context.req.headers.host
       );
+      const productBrandRepository = new ProductBrandRepository(
+        accessToken,
+        context.req.headers.host
+      );
 
       const responses = await Promise.allSettled([
         productRepository.getBestSellerProducts({ limit: 12 }),
@@ -84,6 +89,9 @@ export const getServerSideProps = getProps({
         }),
         merchantRepository.getMerchant(),
         themeWidgetRepository.getThemeWidget(),
+        productBrandRepository.getProductBrands({
+          withPagination: "false",
+        }),
       ]).then((responses) => responses.map((response) => response.value));
 
       const [
@@ -99,12 +107,14 @@ export const getServerSideProps = getProps({
         catalogs,
         merchant,
         theme,
+        productBrands,
       ] = responses;
 
       return {
         props: {
           bannerMerchants: bannerMerchants?.data,
           productCategories: productCategories?.data,
+          productBrands: productBrands?.data,
           catalogs: catalogs?.data,
           bestSellerProducts: bestSellerProducts?.data,
           recommendProducts: recommendProducts?.data,

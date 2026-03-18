@@ -42,7 +42,7 @@ export const getServerSideProps = getProps({
         productCategoryRepository.getProductCategories({
           withPagination: 'false'
         }),
-        productBrandRepository.getProductCategories({
+        productBrandRepository.getProductBrands({
           withPagination: 'false'
         }),
         catalogRepository.getCatalogs({

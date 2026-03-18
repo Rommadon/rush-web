@@ -97,7 +97,7 @@ export const NewInCard: FC<NewInCardProps> = (props) => {
           position="relative"
           onClick={onClickProduct}
         >
-          {/* {isOutOfStock && (
+          {isOutOfStock && (
             <>
               <Box
                 sx={{
@@ -124,7 +124,7 @@ export const NewInCard: FC<NewInCardProps> = (props) => {
                 สินค้าหมด
               </Typography>
             </>
-          )} */}
+          )}
           <ProductBadges
             badgeLeftText={badgeLeftText}
             badgeRightText={badgeRightText}

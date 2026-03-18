@@ -136,7 +136,7 @@ export const SummaryProductCard: FC<
         onClick={() => onClickProduct()}
         position="relative"
       >
-        {/* {isOutOfStock && (
+        {isOutOfStock && (
           <>
             <Box
               sx={{
@@ -163,7 +163,7 @@ export const SummaryProductCard: FC<
               สินค้าหมด
             </Typography>
           </>
-        )} */}
+        )}
         {props?.productImages && productImage ? (
           <NextImage
             src={productImage}

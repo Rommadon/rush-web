@@ -21,10 +21,11 @@ import { SingleProductDetailFormController } from "./form/SingleProductDetailFor
 import { ProductDetailGallery } from "./ProductDetailGallery";
 import { CompareButton } from "./CompareButton";
 import { useComparison } from "../hooks";
-import { getProductItemPrice, getProductItemsPrice } from "utils/calaulate";
+import { getProductItemPrice, getProductItemsPrice, getProductStock } from "utils/calaulate";
 import heartFillIcon from "public/icons/shopdit-icon_heart-fill.svg";
 import { CartContext, useAuth } from "src";
 import { ProductDetailDrawer } from "./ProductDetailDrawer";
+import { ContactUsDrawer } from "./ContactUsDrawer";
 import router from "next/router";
 import { DefaultLayout, DefaultLayoutProp } from "src/core/components/DefaultLayout";
 import CartIcon from "src/core/components/CartIcon";
@@ -54,8 +55,10 @@ export const ProductDetail: FC<ProductDetailProps> = (props) => {
   const [openOptionDrawer, setOpenOptionDrawer] = useState(false);
   const [customerProductFavoriteData, setCustomerProductFavoriteData] = useState(props?.customerProductFavorite);
   const [unit, setUnit] = useState(product?.unit);
+  const [isShowContact, setIsShowContact] = useState(false);
 
   const productPrice = getProductItemsPrice(product?.productItems);
+  const isOutOfStock = getProductStock(product?.productItems) <= 0;
 
   const handleClickCompareBtn = () => {
     if (isInComparison(product)) {
@@ -115,6 +118,8 @@ export const ProductDetail: FC<ProductDetailProps> = (props) => {
     }
   }, [props]);
 
+  console.log(product)
+
   return (
     <DefaultLayout
       {...props}
@@ -167,9 +172,16 @@ export const ProductDetail: FC<ProductDetailProps> = (props) => {
               fullWidth
               disableElevation
               sx={{ py: "16px", borderRadius: "8px" }}
-              onClick={() => setOpenOptionDrawerOrLogin()}
+              onClick={() => {
+                if (props.product?.isContactOnly) {
+                  setIsShowContact(true);
+                } else {
+                  setOpenOptionDrawerOrLogin();
+                }
+              }}
+              disabled={isOutOfStock && !props.product?.isContactOnly}
             >
-              เพิ่มลงตระกร้า
+              {props.product?.isContactOnly ? "ติดต่อเรา" : (isOutOfStock ? "สินค้าหมด" : "เพิ่มลงตระกร้า")}
             </Button>
           </Box>
         )}
@@ -180,6 +192,12 @@ export const ProductDetail: FC<ProductDetailProps> = (props) => {
         onOpen={() => setOpenOptionDrawer(true)}
         product={props.product}
         cart={props.cart}
+      />
+      <ContactUsDrawer 
+        open={isShowContact}
+        onClose={() => setIsShowContact(false)}
+        onOpen={() => setIsShowContact(true)}
+        product={props.product}
       />
       <Box
         {...(isDesktop
@@ -193,7 +211,7 @@ export const ProductDetail: FC<ProductDetailProps> = (props) => {
           : {})}
       >
         <Box width={isDesktop ? "576px" : "100%"} pb="32px">
-          <ProductDetailGallery images={props.product?.productImages} />
+          <ProductDetailGallery images={props.product?.productImages} isOutOfStock={isOutOfStock} />
         </Box>
 
         <Box>
@@ -247,9 +265,9 @@ export const ProductDetail: FC<ProductDetailProps> = (props) => {
                     )}
                   {
                     productPrice?.minPrice?.priceOnDiscount ===
-                    productPrice?.maxPrice?.priceOnDiscount &&
-                    productPrice?.minPrice?.discount &&
-                    productPrice?.maxPrice?.discount ?
+                      productPrice?.maxPrice?.priceOnDiscount &&
+                      productPrice?.minPrice?.discount &&
+                      productPrice?.maxPrice?.discount ?
                       <Typography
                         variant="h1"
                         color="grey.100"
@@ -260,7 +278,7 @@ export const ProductDetail: FC<ProductDetailProps> = (props) => {
                         </Typography>
                         {intl.formatNumber(productPrice?.minPrice?.price, {})}
                       </Typography>
-                    : <></>
+                      : <></>
                   }
                   {productPrice?.minPrice?.priceOnDiscount !==
                     productPrice?.maxPrice?.priceOnDiscount && (
