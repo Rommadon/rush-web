@@ -1,4 +1,3 @@
-/** @type {import('next').NextConfig} */
 
 // This file sets a custom webpack configuration to use your Next.js app
 // with Sentry.
@@ -10,6 +9,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true'
 })
 
+/** @type {import('next').NextConfig} */
 const moduleExports = {
   i18n: {
     locales: ["en", "th"],
@@ -29,7 +29,6 @@ const moduleExports = {
     disableClientWebpackPlugin: true,
   },
   images: {
-    unoptimized: true,
     domains: [
       'staging-shopdit.s3.ap-southeast-1.amazonaws.com',
       'staging-shopdit.s3.amazonaws.com',
