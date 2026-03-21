@@ -29,6 +29,7 @@ const moduleExports = {
     disableClientWebpackPlugin: true,
   },
   images: {
+    unoptimized: true,
     domains: [
       'staging-shopdit.s3.ap-southeast-1.amazonaws.com',
       'staging-shopdit.s3.amazonaws.com',
