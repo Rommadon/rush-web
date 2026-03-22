@@ -131,7 +131,7 @@ export const BestSellerCard: FC<Product & BestSellerCardProps> = (props) => {
           badgeRightText={badgeRightText}
         />
         {productImage ? (
-          <NextImage
+          <NextImage  
             className={isDesktop ? "" : "rounded-2"}
             src={
               productImage ??
@@ -143,7 +143,8 @@ export const BestSellerCard: FC<Product & BestSellerCardProps> = (props) => {
             quality={70}
             alt={`${currentMerchant} - ${props?.name}`}
             objectFit="cover"
-          />
+  unoptimized={true}
+/>
         ) : (
           <Box
             width={isDesktop ? 200 : 155}
@@ -239,13 +240,14 @@ export const BestSellerCard: FC<Product & BestSellerCardProps> = (props) => {
               alignSelf="baseline"
               onClick={() => setOpenOptionDrawerOrLogin()}
             >
-              <NextImage
+              <NextImage  
                 src={cartIcon}
                 alt="cart icon"
                 width="20px"
                 height="20px"
                 priority={true}
-              />
+  unoptimized={true}
+/>
             </Box>
           )}
         </Box>

@@ -45,7 +45,7 @@ export const CategoryComponent = (props: CategoryProps) => {
                     position="relative"
                   >
                     {category?.logo?.url ? (
-                      <NextImage
+                      <NextImage  
                         className={isDesktop ? "" : "rounded-2"}
                         src={
                           category?.logo?.url ??
@@ -57,7 +57,8 @@ export const CategoryComponent = (props: CategoryProps) => {
                         quality={70}
                         alt={category?.name}
                         objectFit="cover"
-                      />
+  unoptimized={true}
+/>
                     ) : (
                       <Box width={200} height={200} bgcolor={"#f3f3f3"}></Box>
                     )}

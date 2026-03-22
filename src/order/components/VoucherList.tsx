@@ -78,12 +78,13 @@ export const VoucherList: FC<VoucherListProps> = (props) => {
               rel="noopener noreferrer"
             >
               <Box paddingLeft="16px">
-                <Image
+                <Image  
                   src={chatIcon}
                   alt="chat icon"
                   width="24px"
                   height="24px"
-                />
+  unoptimized={true}
+/>
               </Box>
             </a>
           )}
@@ -94,12 +95,13 @@ export const VoucherList: FC<VoucherListProps> = (props) => {
               .join("")}`}
           >
             <Box paddingLeft="24px">
-              <Image
+              <Image  
                 src={phoneIcon}
                 alt="phone icon"
                 width="24px"
                 height="24px"
-              />
+  unoptimized={true}
+/>
             </Box>
           </a>
         </Box>

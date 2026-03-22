@@ -224,7 +224,7 @@ export const Footer: FC<FooterProp> = (props) => {
                     height: "26px",
                   }}
                 >
-                  <Image src={facebookLogo2} alt="facebook logo" />
+                  <Image src={facebookLogo2} alt="facebook logo" unoptimized={true}/>
                 </Box>
               </a>
             )}
@@ -241,7 +241,7 @@ export const Footer: FC<FooterProp> = (props) => {
                     height: "30px",
                   }}
                 >
-                  <Image src={instagramLogo2} alt="ig logo" />
+                  <Image src={instagramLogo2} alt="ig logo" unoptimized={true}/>
                 </Box>
               </a>
             )}
@@ -258,7 +258,7 @@ export const Footer: FC<FooterProp> = (props) => {
                     height: "30px",
                   }}
                 >
-                  <Image src={youtubeLogo2} alt="youtube logo" />
+                  <Image src={youtubeLogo2} alt="youtube logo" unoptimized={true}/>
                 </Box>
               </a>
             )}

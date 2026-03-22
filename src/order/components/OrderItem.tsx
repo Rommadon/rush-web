@@ -84,6 +84,7 @@ export const OrderItem: FC<OrderModel & {}> = (props) => {
                           width={140}
                           height={140}
                           priority={true}
+                          unoptimized={true}
                         />
                       </Box>
                     ) : ''

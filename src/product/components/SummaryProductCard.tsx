@@ -165,26 +165,26 @@ export const SummaryProductCard: FC<
           </>
         )}
         {props?.productImages && productImage ? (
-          <NextImage
+          <NextImage  
             src={productImage}
             className={isDesktop ? "" : "rounded-2"}
             width={isDesktop ? props.width || 220 : dimensions.width}
             height={isDesktop ? props.width || 220 : dimensions.width}
             // priority={true}
-            // unoptimized
             // placeholder="blur"
             blurDataURL={"/popular-product-thumbnail.jpg"}
             quality={70}
             alt={`${currentMerchant} - ${props?.name}`}
-          />
+  unoptimized={true}
+/>
         ) : (
-          <NextImage
+          <NextImage  
             src="/new-in-placeholder.svg"
             width={isDesktop ? props.width || 220 : dimensions.width}
             height={isDesktop ? props.width || 220 : dimensions.width}
             // priority={true}
-            // unoptimized
-          />
+  unoptimized={true}
+/>
         )}
       </Box>
       <Box
@@ -289,13 +289,14 @@ export const SummaryProductCard: FC<
               alignSelf="baseline"
               onClick={() => setOpenOptionDrawerOrLogin()}
             >
-              <NextImage
+              <NextImage  
                 src={cartIcon}
                 alt="cart icon"
                 width="20px"
                 height="20px"
                 priority={true}
-              />
+  unoptimized={true}
+/>
             </Box>
           )}
         </Box>

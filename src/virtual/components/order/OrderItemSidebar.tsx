@@ -33,7 +33,7 @@ export const OrderItemSidebar: FC<OrderItemProps> = (props) => {
         borderRadius="8px"
         overflow="hidden"
       >
-        <NextImage src={props.imageSrc} width={100} height={100} priority={true}/>
+        <NextImage src={props.imageSrc} width={100} height={100} priority={true} unoptimized={true}/>
       </Box>
       <Box flex="1" ml="16px" display="flex" flexDirection="column" justifyContent="space-between">
         <Box

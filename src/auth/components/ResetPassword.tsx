@@ -159,12 +159,13 @@ export const ResetPassword: FC<any> = (props) => {
                   }}
                   onClick={togglePasswordVisibility}
                 >
-                  <Image
+                  <Image  
                     src={passwordShown ? visibilityIcon : visibilityOffIcon}
                     alt="visibility icon"
                     width="24px"
                     height="24px"
-                  />
+  unoptimized={true}
+/>
                 </IconButton>
                 <TextField
                   fullWidth
@@ -175,12 +176,13 @@ export const ResetPassword: FC<any> = (props) => {
               </FormControl>
               <Box display={"flex"} marginTop="5px">
                 <Box>
-                  <Image
+                  <Image  
                     src={watchPassword?.length >= 8 ? checkCircle : cancel}
                     alt="check icon"
                     color="#1ee0ac"
                     width="12px"
                     height="12px"
+                    unoptimized={true}
                   />
                 </Box>
                 <Typography
@@ -199,13 +201,14 @@ export const ResetPassword: FC<any> = (props) => {
               </Box>
               <Box display={"flex"}>
                 <Box>
-                  <Image
+                  <Image  
                     src={checkUpperLowerNumber() ? checkCircle : cancel}
                     alt="check icon"
                     color="#1ee0ac"
                     width="12px"
                     height="12px"
-                  />
+  unoptimized={true}
+/>
                 </Box>
                 <Typography
                   variant="body2" // or "caption" depending on your preference
@@ -223,13 +226,14 @@ export const ResetPassword: FC<any> = (props) => {
               </Box>
               <Box display={"flex"}>
                 <Box>
-                  <Image
+                  <Image  
                     src={checkSpecialCharacter() ? checkCircle : cancel}
                     alt="check icon"
                     color="#1ee0ac"
                     width="12px"
                     height="12px"
-                  />
+  unoptimized={true}
+/>
                 </Box>
                 <Typography
                   variant="body2" // or "caption" depending on your preference
@@ -260,14 +264,15 @@ export const ResetPassword: FC<any> = (props) => {
                   }}
                   onClick={toggleConfirmPasswordVisibility}
                 >
-                  <Image
+                  <Image  
                     src={
                       confirmPasswordShown ? visibilityIcon : visibilityOffIcon
                     }
                     alt="visibility icon"
                     width="24px"
                     height="24px"
-                  />
+  unoptimized={true}
+/>
                 </IconButton>
                 <TextField
                   fullWidth
@@ -329,12 +334,13 @@ export const ResetPassword: FC<any> = (props) => {
                 }}
                 onClick={togglePasswordVisibility}
               >
-                <Image
+                <Image  
                   src={passwordShown ? visibilityIcon : visibilityOffIcon}
                   alt="visibility icon"
                   width="24px"
                   height="24px"
-                />
+  unoptimized={true}
+/>
               </IconButton>
               <TextField
                 fullWidth
@@ -345,12 +351,13 @@ export const ResetPassword: FC<any> = (props) => {
             </FormControl>
             <Box display={"flex"}>
               <Box>
-                <Image
+                <Image  
                   src={watchPassword?.length >= 8 ? checkCircle : cancel}
                   alt="check icon"
                   color="#1ee0ac"
                   width="12px"
                   height="12px"
+                  unoptimized={true}
                 />
               </Box>
               <Typography
@@ -369,13 +376,14 @@ export const ResetPassword: FC<any> = (props) => {
             </Box>
             <Box display={"flex"}>
               <Box>
-                <Image
+                <Image  
                   src={checkUpperLowerNumber() ? checkCircle : cancel}
                   alt="check icon"
                   color="#1ee0ac"
                   width="12px"
                   height="12px"
-                />
+  unoptimized={true}
+/>
               </Box>
               <Typography
                 variant="body2" // or "caption" depending on your preference
@@ -393,13 +401,14 @@ export const ResetPassword: FC<any> = (props) => {
             </Box>
             <Box display={"flex"}>
               <Box>
-                <Image
+                <Image  
                   src={checkSpecialCharacter() ? checkCircle : cancel}
                   alt="check icon"
                   color="#1ee0ac"
                   width="12px"
                   height="12px"
-                />
+  unoptimized={true}
+/>
               </Box>
               <Typography
                 variant="body2" // or "caption" depending on your preference
@@ -429,14 +438,15 @@ export const ResetPassword: FC<any> = (props) => {
                 }}
                 onClick={toggleConfirmPasswordVisibility}
               >
-                <Image
+                <Image  
                   src={
                     confirmPasswordShown ? visibilityIcon : visibilityOffIcon
                   }
                   alt="visibility icon"
                   width="24px"
                   height="24px"
-                />
+  unoptimized={true}
+/>
               </IconButton>
               <TextField
                 fullWidth

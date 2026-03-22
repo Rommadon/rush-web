@@ -66,34 +66,37 @@ export const NavbarMobile: FC<NavbarMobileProp> = (props) => {
             rel="noopener noreferrer"
           >
             <Box paddingLeft={"16px"} paddingTop={"5px"}>
-              <Image
+              <Image  
                 src={chat}
                 alt="chat icon"
                 width="30px"
                 height="30px"
-              />
+  unoptimized={true}
+/>
             </Box>
           </a>
         ) : (
           <NextLink href={isAuth ? routes.wishlist() : routes.login()}>
             <Box paddingLeft={"16px"}>
-              <Image
+              <Image  
                 src={heartIcon}
                 alt="heart icon"
                 width="24px"
                 height="24px"
-              />
+  unoptimized={true}
+/>
             </Box>
           </NextLink>
         )}
         <NextLink href={isAuth ? routes.cart() : routes.login()}>
           <Box paddingLeft={"16px"}>
-            <Image
+            <Image  
               src={cartIcon}
               alt="cart icon"
               width="24px"
               height="24px"
-            />
+  unoptimized={true}
+/>
           </Box>
         </NextLink>
         {cartData?.cartItems?.length > 0 && (

@@ -77,12 +77,13 @@ export const PersonalInfoDesktop: FC<PersonalInfoDesktopProps> = (props) => {
             height="160px"
             mx="auto"
           >
-            <NextImage
+            <NextImage  
               src={profile?.imageUpload?.url ?? `/flash-sale-thumbnail.jpg`}
               width="160"
               height="160"
               objectPosition={"center"}
-            />
+  unoptimized={true}
+/>
           </Box>
         </Box>
         <Box display="flex" justifyContent="space-between" p="24px">

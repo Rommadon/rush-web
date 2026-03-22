@@ -104,12 +104,13 @@ export const VerifyEmail: FC<VerifyEmailProps> = (props) => {
               margin: "auto",
             }}
           >
-            <Image
+            <Image  
               src={EmailIcon} // Replace with the correct path to your image
               alt="Email Image"
               width="400px" // Make the image take up the entire Box
               height="400px" // Make the image take up the entire Box
-            />
+  unoptimized={true}
+/>
           </Box>
           <Typography variant="h2" fontWeight="bold" mt={2}>
             กรุณายืนยันอีเมลของคุณ

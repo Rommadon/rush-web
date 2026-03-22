@@ -29,13 +29,14 @@ export const ArticleItem: FC<ArticleItemProps> = (props) => {
           overflow="hidden"
           borderRadius={ isDesktop ? "2px" : "8px" }
         >
-          <NextImage
+          <NextImage  
             src={props.imgSrc || ""}
             {...(isDesktop
               ? { width: 250, height: 250*9/16 }
               : { width: 144, height: 81 })}
             objectFit="cover"
-          />
+  unoptimized={true}
+/>
         </Box>
         <Box flex="1">
           {isDesktop && (

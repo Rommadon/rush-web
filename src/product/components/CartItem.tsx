@@ -69,11 +69,12 @@ export const CartItem: FC<CartItemProps> = (props) => {
     >
       <Box width="120px" height="auto" sx={{ cursor: 'pointer' }}>
         <NextLink href={`/products/${props?.cartItem?.productItem?.product?.slug}`}>
-          <NextImage
+          <NextImage  
             src={props.image || '/new-in-placeholder.svg'}
             width="89px"
             height="89px"
-          ></NextImage>
+  unoptimized={true}
+></NextImage>
         </NextLink>
       </Box>
 

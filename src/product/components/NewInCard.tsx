@@ -129,18 +129,18 @@ export const NewInCard: FC<NewInCardProps> = (props) => {
             badgeLeftText={badgeLeftText}
             badgeRightText={badgeRightText}
           />
-          <NextImage
+          <NextImage  
             className={isDesktop ? "" : "rounded-2"}
             src={productImage ?? "/new-in-placeholder.svg"}
             width={isDesktop ? 170 : 120}
             height={isDesktop ? 170 : 120}
             // priority={true}
-            // unoptimized
             // placeholder="blur"
             blurDataURL={"/popular-product-thumbnail.jpg"}
             quality={70}
             alt={`${currentMerchant} - ${props?.name}`}
-          />
+  unoptimized={true}
+/>
         </Box>
         <Box
           pt="4px"
@@ -250,13 +250,14 @@ export const NewInCard: FC<NewInCardProps> = (props) => {
                   alignSelf="baseline"
                   onClick={() => setOpenOptionDrawerOrLogin()}
                 >
-                  <NextImage
+                  <NextImage  
                     src={cartIcon}
                     alt="cart icon"
                     width="20px"
                     height="20px"
                     priority={true}
-                  />
+  unoptimized={true}
+/>
                 </Box>
               )}
             </Box>

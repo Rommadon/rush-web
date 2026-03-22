@@ -112,14 +112,14 @@ export const ProductDetailGallery: FC<{ images: ProductImage[], isOutOfStock?: b
               </Typography>
             </>
           )}
-          <NextImage
+          <NextImage  
             src={selectedImage}
             width={300}
             height={300}
             layout="responsive"
             priority={true}
-            unoptimized
-          />
+  unoptimized={true}
+/>
         </Box>
       )}
       {!isDesktop && (
@@ -161,7 +161,7 @@ export const ProductDetailGallery: FC<{ images: ProductImage[], isOutOfStock?: b
                 )}
                 {
                   image.imageUpload && (
-                    <NextImage
+                    <NextImage  
                       src={image.imageUpload?.url}
                       alt={image.imageUpload?.name}
                       width={375}
@@ -170,22 +170,14 @@ export const ProductDetailGallery: FC<{ images: ProductImage[], isOutOfStock?: b
                       priority
                       placeholder="blur"
                       blurDataURL={image.imageUpload?.url || "/new-in-placeholder.svg"}
-                    />
+  unoptimized={true}
+/>
                   )
                 }
               </Box>
             </Box>
           ))}
         />
-        // <Box minWidth="320px" minHeight="320px" position="relative">
-        //   <NextImage
-        //     src={productImage || "/article-placeholder.svg"}
-        //     width={375}
-        //     height={375}
-        //     layout="fill"
-        //     priority={true}
-        //   />
-        // </Box>
       )}
       {isDesktop && (
         <Box mt="24px">
@@ -198,19 +190,19 @@ export const ProductDetailGallery: FC<{ images: ProductImage[], isOutOfStock?: b
             items={
               props.images ?
                 props.images?.map((image, index) => (
-                  <Box key={index}>
-                    <NextImage
+                   <Box key={index}>
+                     <NextImage 
                       onClick={() => setSelectedImage(image?.imageUpload?.url)}
+                      unoptimized={true}
                       className="rounded-2"
                       src={image?.imageUpload?.url || "/new-in-placeholder.svg"}
                       width={100}
                       height={100}
                       priority={true}
-                      // unoptimized
-                      // placeholder="blur"
+                      placeholder="blur"
                       blurDataURL={image?.imageUpload?.url || "/new-in-placeholder.svg"}
                     />
-                  </Box>
+                   </Box>
                 )) :
                 [<Box sx={{ width: '100px', height: '100px' }} key={0}></Box>]
             }

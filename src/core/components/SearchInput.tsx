@@ -48,7 +48,7 @@ export const SearchInput: FC<SearchInputProp> = (props) => {
     >
       <Input {...register('search', { value: props.value })} placeholder="ค้นหาสินค้า หมวดหมู่" sx={{ fontSize: "12px", fontWeight: "light", pl: "20px", backgroundColor: "#f5f5f5", fontFamily: "Kanit, sans-serif" }}/>
       <Box component="span" position="absolute" display="flex" left="16px">
-        <Image src={searchIconMobile} alt="search icon" width="16px" height="16px"/>
+        <Image src={searchIconMobile} alt="search icon" width="16px" height="16px" unoptimized={true}/>
       </Box>
     </Box>
   );

@@ -140,7 +140,7 @@ export const EditPersonalInfo: FC<EditPersonalInfoProps> = (props) => {
               >
                 {
                   file ? (
-                    typeof file !== "object" ? <NextImage src={profile?.imageUpload?.url} layout="fill" objectFit="contain" priority={true}/> : <NextImage src={URL.createObjectURL(file)} layout="fill" objectFit="contain" priority={true} />
+                    typeof file !== "object" ? <NextImage src={profile?.imageUpload?.url} layout="fill" objectFit="contain" priority={true} unoptimized={true}/> : <NextImage src={URL.createObjectURL(file)} layout="fill" objectFit="contain" priority={true} unoptimized={true}/>
                   ) : (
                     <svg
                       width="104"
@@ -162,12 +162,13 @@ export const EditPersonalInfo: FC<EditPersonalInfoProps> = (props) => {
                 }
               </IconButton>
 
-              {/* <NextImage
+              {/* <NextImage  
                 src="/flash-sale-thumbnail.jpg"
                 width="160"
                 height="160"
                 objectPosition={"center"}
-              /> */}
+  unoptimized={true}
+/> */}
             </Box>
           </Box>
           <Box

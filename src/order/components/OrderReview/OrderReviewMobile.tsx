@@ -979,12 +979,13 @@ export const OrderReviewMobile: FC<OrderReviewMobileProps> = (props) => {
                         textAlign="center"
                         mr="8px"
                       >
-                        <NextImage
+                        <NextImage  
                           src={"/location.svg"}
                           alt="heart icon"
                           width={"12px"}
                           height={"12px"}
-                        />
+  unoptimized={true}
+/>
                       </Box>
                       <Typography fontWeight="light" fontSize={"14px"}>
                         {[
@@ -1009,12 +1010,13 @@ export const OrderReviewMobile: FC<OrderReviewMobileProps> = (props) => {
                         textAlign="center"
                         mr="8px"
                       >
-                        <NextImage
+                        <NextImage  
                           src={"/profile.svg"}
                           alt="heart icon"
                           width={"12px"}
                           height={"12px"}
-                        />
+  unoptimized={true}
+/>
                       </Box>
                       <Typography fontWeight="light" fontSize={"14px"}>
                         {selectedCustomerAddress?.name}
@@ -1031,12 +1033,13 @@ export const OrderReviewMobile: FC<OrderReviewMobileProps> = (props) => {
                         textAlign="center"
                         mr="8px"
                       >
-                        <NextImage
+                        <NextImage  
                           src={"/phone.svg"}
                           alt="heart icon"
                           width={"12px"}
                           height={"12px"}
-                        />
+  unoptimized={true}
+/>
                       </Box>
                       <Typography fontWeight="light" fontSize={"14px"}>
                         {selectedCustomerAddress?.tel}

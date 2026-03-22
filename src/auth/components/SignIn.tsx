@@ -215,12 +215,13 @@ export const SignIn: FC<SignInProps> = (props) => {
         >
           {currentMerchant?.data?.merchantIcon?.imageUpload?.url && (
             <Box textAlign="center" mb="24px">
-              <Image
+              <Image  
                 src={currentMerchant?.data?.merchantIcon?.imageUpload?.url}
                 alt="merchant icon"
                 width="80px"
                 height="80px"
-              />
+  unoptimized={true}
+/>
             </Box>
           )}
           {mode === "verifyOtp" && (
@@ -276,12 +277,13 @@ export const SignIn: FC<SignInProps> = (props) => {
         <>
           {currentMerchant?.data?.merchantIcon?.imageUpload?.url && (
             <Box textAlign="center" mt="50px">
-              <Image
+              <Image  
                 src={currentMerchant?.data?.merchantIcon?.imageUpload?.url}
                 alt="merchant icon"
                 width="80px"
                 height="80px"
-              />
+  unoptimized={true}
+/>
             </Box>
           )}
           {mode === "verifyOtp" && (

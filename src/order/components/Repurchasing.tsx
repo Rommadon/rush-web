@@ -33,12 +33,12 @@ export const Repurchasing: FC<RepurchasingProps> = (props) => {
         >
           <NextLink href={routes.wishlist()}>
             <Box paddingLeft={"16px"}>
-              <Image src={heartIcon} alt="heart icon" width="24px" height="24px" />
+              <Image src={heartIcon} alt="heart icon" width="24px" height="24px" unoptimized={true}/>
             </Box>
           </NextLink>
           <NextLink href={routes.cart()}>
             <Box paddingLeft={"16px"}>
-              <Image src={cartIcon} alt="cart icon" width="24px" height="24px" />
+              <Image src={cartIcon} alt="cart icon" width="24px" height="24px" unoptimized={true}/>
             </Box>
           </NextLink>
         </Box>

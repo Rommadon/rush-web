@@ -41,7 +41,7 @@ export const BrandComponent = (props: BrandProps) => {
                     position="relative"
                   >
                     {brand?.logo?.url ? (
-                      <NextImage
+                      <NextImage  
                         className={isDesktop ? "" : "rounded-2"}
                         src={brand.logo.url}
                         width={272}
@@ -50,7 +50,8 @@ export const BrandComponent = (props: BrandProps) => {
                         quality={70}
                         alt={brand?.name}
                         objectFit="cover"
-                      />
+  unoptimized={true}
+/>
                     ) : (
                       <Box width={200} height={200} bgcolor={"#f3f3f3"}></Box>
                     )}

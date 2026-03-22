@@ -53,7 +53,7 @@ export const SocialLogin: FC<SocialLoginProp> = (props) => {
             justifyContent: "flex-start",
             textTransform: "initial",
           }}
-          startIcon={<NextImage src="/icons/line.png" width={24} height={24} />}
+          startIcon={<NextImage src="/icons/line.png" width={24} height={24} unoptimized={true}/>}
         >
           <Typography textAlign="center" width="100%" fontWeight="700">
             Line

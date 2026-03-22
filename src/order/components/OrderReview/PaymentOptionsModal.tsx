@@ -90,45 +90,45 @@ export const PaymentOptionModal: FC<PaymentOptionModalProps> = (props) => {
   const getImageBankPropmpt = (name: any) => {
     switch (name) {
       case "ธนาคารไทยพาณิชย์":
-        return <Image src={scbIcon} alt="scb icon" width="39px" height="39px" />
+        return <Image src={scbIcon} alt="scb icon" width="39px" height="39px" unoptimized={true}/>
       case "ธนาคารกสิกรไทย":
-        return <Image src={kbankIcon} alt="kbank icon" width="39px" height="39px" />
+        return <Image src={kbankIcon} alt="kbank icon" width="39px" height="39px" unoptimized={true}/>
       case "ธนาคารกรุงเทพ":
-        return <Image src={bblIcon} alt="bbl icon" width="39px" height="39px" />
+        return <Image src={bblIcon} alt="bbl icon" width="39px" height="39px" unoptimized={true}/>
       case "ธนาคารกรุงไทย":
-        return <Image src={ktbIcon} alt="ktb icon" width="39px" height="39px" />
+        return <Image src={ktbIcon} alt="ktb icon" width="39px" height="39px" unoptimized={true}/>
       case "ธนาคารซิติแบงค์":
-        return <Image src={citiIcon} alt="citi icon" width="39px" height="39px" />
+        return <Image src={citiIcon} alt="citi icon" width="39px" height="39px" unoptimized={true}/>
       case "ธนาคารเกียรตินาคิน":
-        return <Image src={kkIcon} alt="kk icon" width="39px" height="39px" />
+        return <Image src={kkIcon} alt="kk icon" width="39px" height="39px" unoptimized={true}/>
       case "ธนาคารซีไอเอ็มบีไทย":
-        return <Image src={cimbIcon} alt="cimb icon" width="39px" height="39px" />
+        return <Image src={cimbIcon} alt="cimb icon" width="39px" height="39px" unoptimized={true}/>
       case "ธนาคารทหารไทยธนชาติ":
-        return <Image src={tbankIcon} alt="tbank icon" width="39px" height="39px" />
+        return <Image src={tbankIcon} alt="tbank icon" width="39px" height="39px" unoptimized={true}/>
       case "ธนาคารกรุงศรีอยุธยา":
-        return <Image src={bayIcon} alt="bay icon" width="39px" height="39px" />
+        return <Image src={bayIcon} alt="bay icon" width="39px" height="39px" unoptimized={true}/>
       case "ธนาคารออมสิน":
-        return <Image src={gsbIcon} alt="gsb icon" width="39px" height="39px" />
+        return <Image src={gsbIcon} alt="gsb icon" width="39px" height="39px" unoptimized={true}/>
       case "ธนาคารอิสลามแห่งประเทศไทย":
-        return <Image src={ibankIcon} alt="ibank icon" width="39px" height="39px" />
+        return <Image src={ibankIcon} alt="ibank icon" width="39px" height="39px" unoptimized={true}/>
       case "ธนาคารไอซีบีซี":
-        return <Image src={icbcIcon} alt="icbc icon" width="39px" height="39px" />
+        return <Image src={icbcIcon} alt="icbc icon" width="39px" height="39px" unoptimized={true}/>
       case "ธนาคารยูโอบี":
-        return <Image src={uobIcon} alt="uob icon" width="39px" height="39px" />
+        return <Image src={uobIcon} alt="uob icon" width="39px" height="39px" unoptimized={true}/>
       case "ธนาคารทิสโก้":
-        return <Image src={tiscoIcon} alt="tisco icon" width="39px" height="39px" />
+        return <Image src={tiscoIcon} alt="tisco icon" width="39px" height="39px" unoptimized={true}/>
       case "ธนาคารไทยเครดิตเพื่อรายย่อย":
-        return <Image src={tcrbIcon} alt="tcrb icon" width="39px" height="39px" />
+        return <Image src={tcrbIcon} alt="tcrb icon" width="39px" height="39px" unoptimized={true}/>
       case "ธนาคารแสตนดาร์ดชาร์เตอร์ไทย":
-        return <Image src={scIcon} alt="sc icon" width="39px" height="39px" />
+        return <Image src={scIcon} alt="sc icon" width="39px" height="39px" unoptimized={true}/>
       case "ธนาคารอาคารสงเคราะห์":
-        return <Image src={ghbIcon} alt="ghb icon" width="39px" height="39px" />
+        return <Image src={ghbIcon} alt="ghb icon" width="39px" height="39px" unoptimized={true}/>
       case "ธนาคารแลนด์ แอนด์ เฮาส์":
-        return <Image src={lhbIcon} alt="lhb icon" width="39px" height="39px" />
+        return <Image src={lhbIcon} alt="lhb icon" width="39px" height="39px" unoptimized={true}/>
       case "ธนาคารเพื่อการเกษตรและสหกรณ์การเกษตร":
-        return <Image src={baacIcon} alt="baac icon" width="39px" height="39px" />
+        return <Image src={baacIcon} alt="baac icon" width="39px" height="39px" unoptimized={true}/>
       default:
-        return <Image src={ppIcon} alt="pp icon" width="39px" height="39px"/>
+        return <Image src={ppIcon} alt="pp icon" width="39px" height="39px" unoptimized={true}/>
     }
   }
 
@@ -176,7 +176,7 @@ export const PaymentOptionModal: FC<PaymentOptionModalProps> = (props) => {
                 >
                   <Box display="flex">
                     <Box width="8px" />
-                    <Image src={cardIcon} alt="scb mobile" width="39px" height="39px" />
+                    <Image src={cardIcon} alt="scb mobile" width="39px" height="39px" unoptimized={true}/>
                     <Box width="12px" />
                     <Typography fontSize="14px" fontWeight="400" pt="8px">
                       บัตรเครดิต
@@ -198,7 +198,7 @@ export const PaymentOptionModal: FC<PaymentOptionModalProps> = (props) => {
                 >
                   <Box display="flex">
                     <Box width="8px" />
-                    <Image src={cardIcon} alt="scb mobile" width="39px" height="39px" />
+                    <Image src={cardIcon} alt="scb mobile" width="39px" height="39px" unoptimized={true}/>
                     <Box width="12px" />
                     <Typography fontSize="14px" fontWeight="400">
                       บัตรเครดิต <Typography fontSize="12px" color="red.50">ยังไม่เปิดให้บริการ</Typography>
@@ -235,7 +235,7 @@ export const PaymentOptionModal: FC<PaymentOptionModalProps> = (props) => {
                 >
                   <Box display="flex">
                     <Box width="8px" />
-                    <Image src={linepayIcon} alt="scb mobile" width="39px" height="39px" />
+                    <Image src={linepayIcon} alt="scb mobile" width="39px" height="39px" unoptimized={true}/>
                     <Box width="12px" />
                     <Typography fontSize="14px" fontWeight="400" pt="8px">
                       Line Pay
@@ -257,7 +257,7 @@ export const PaymentOptionModal: FC<PaymentOptionModalProps> = (props) => {
                 >
                   <Box display="flex">
                     <Box width="8px" />
-                    <Image src={linepayIcon} alt="scb mobile" width="39px" height="39px" />
+                    <Image src={linepayIcon} alt="scb mobile" width="39px" height="39px" unoptimized={true}/>
                     <Box width="12px" />
                     <Typography fontSize="14px" fontWeight="400">
                       Line Pay <Typography fontSize="12px" color="red.50">ยังไม่เปิดให้บริการ</Typography>
@@ -294,7 +294,7 @@ export const PaymentOptionModal: FC<PaymentOptionModalProps> = (props) => {
                 >
                   <Box display="flex">
                     <Box width="8px" />
-                    <Image src={shopeepayIcon} alt="scb mobile" width="39px" height="39px" />
+                    <Image src={shopeepayIcon} alt="scb mobile" width="39px" height="39px" unoptimized={true}/>
                     <Box width="12px" />
                     <Typography fontSize="14px" fontWeight="400" pt="8px">
                       Shopee Pay
@@ -316,7 +316,7 @@ export const PaymentOptionModal: FC<PaymentOptionModalProps> = (props) => {
                 >
                   <Box display="flex">
                     <Box width="8px" />
-                    <Image src={shopeepayIcon} alt="scb mobile" width="39px" height="39px" />
+                    <Image src={shopeepayIcon} alt="scb mobile" width="39px" height="39px" unoptimized={true}/>
                     <Box width="12px" />
                     <Typography fontSize="14px" fontWeight="400">
                       Shopee Pay <Typography fontSize="12px" color="red.50">ยังไม่เปิดให้บริการ</Typography>
@@ -353,7 +353,7 @@ export const PaymentOptionModal: FC<PaymentOptionModalProps> = (props) => {
                 >
                   <Box display="flex">
                     <Box width="8px" />
-                    <Image src={tmnIcon} alt="scb mobile" width="39px" height="39px" />
+                    <Image src={tmnIcon} alt="scb mobile" width="39px" height="39px" unoptimized={true}/>
                     <Box width="12px" />
                     <Typography fontSize="14px" fontWeight="400" pt="8px">
                       Truemoney
@@ -375,7 +375,7 @@ export const PaymentOptionModal: FC<PaymentOptionModalProps> = (props) => {
                 >
                   <Box display="flex">
                     <Box width="8px" />
-                    <Image src={tmnIcon} alt="scb mobile" width="39px" height="39px" />
+                    <Image src={tmnIcon} alt="scb mobile" width="39px" height="39px" unoptimized={true}/>
                     <Box width="12px" />
                     <Typography fontSize="14px" fontWeight="400">
                       Truemoney <Typography fontSize="12px" color="red.50">ยังไม่เปิดให้บริการ</Typography>
@@ -425,7 +425,7 @@ export const PaymentOptionModal: FC<PaymentOptionModalProps> = (props) => {
                 >
                   <Box display="flex">
                     <Box width="8px" />
-                    <Image src={scbMobile} alt="scb mobile" width="39px" height="39px" />
+                    <Image src={scbMobile} alt="scb mobile" width="39px" height="39px" unoptimized={true}/>
                     <Box width="12px" />
                     <Typography fontSize="14px" fontWeight="400">
                       SCB EASY <Typography fontSize="12px" color="red.50">ขั้นต่ำยอดรวม 500 บาท</Typography>
@@ -447,7 +447,7 @@ export const PaymentOptionModal: FC<PaymentOptionModalProps> = (props) => {
                 >
                   <Box display="flex">
                     <Box width="8px" />
-                    <Image src={scbMobile} alt="scb mobile" width="39px" height="39px" />
+                    <Image src={scbMobile} alt="scb mobile" width="39px" height="39px" unoptimized={true}/>
                     <Box width="12px" />
                     <Typography fontSize="14px" fontWeight="400">
                       SCB EASY <Typography fontSize="12px" color="red.50">{props.totalPrice > 500 ? 'ยังไม่เปิดให้บริการ' : 'ขั้นต่ำยอดรวม 500 บาท'}</Typography>
@@ -484,7 +484,7 @@ export const PaymentOptionModal: FC<PaymentOptionModalProps> = (props) => {
                 >
                   <Box display="flex">
                     <Box width="8px" />
-                    <Image src={buaMobile} alt="scb mobile" width="39px" height="39px" />
+                    <Image src={buaMobile} alt="scb mobile" width="39px" height="39px" unoptimized={true}/>
                     <Box width="12px" />
                     <Typography fontSize="14px" fontWeight="400">
                       Bualuang mBanking <Typography fontSize="12px" color="red.50">ขั้นต่ำยอดรวม 500 บาท</Typography>
@@ -506,7 +506,7 @@ export const PaymentOptionModal: FC<PaymentOptionModalProps> = (props) => {
                 >
                   <Box display="flex">
                     <Box width="8px" />
-                    <Image src={buaMobile} alt="scb mobile" width="39px" height="39px" />
+                    <Image src={buaMobile} alt="scb mobile" width="39px" height="39px" unoptimized={true}/>
                     <Box width="12px" />
                     <Typography fontSize="14px" fontWeight="400">
                       Bualuang mBanking <Typography fontSize="12px" color="red.50">{props.totalPrice > 500 ? 'ยังไม่เปิดให้บริการ' : 'ขั้นต่ำยอดรวม 500 บาท'}</Typography>
@@ -543,7 +543,7 @@ export const PaymentOptionModal: FC<PaymentOptionModalProps> = (props) => {
                 >
                   <Box display="flex">
                     <Box width="8px" />
-                    <Image src={kmaMobile} alt="scb mobile" width="39px" height="39px" />
+                    <Image src={kmaMobile} alt="scb mobile" width="39px" height="39px" unoptimized={true}/>
                     <Box width="12px" />
                     <Typography fontSize="14px" fontWeight="400">
                       KMA (กรุงศรีโมบายแอป) <Typography fontSize="12px" color="red.50">ขั้นต่ำยอดรวม 500 บาท</Typography>
@@ -565,7 +565,7 @@ export const PaymentOptionModal: FC<PaymentOptionModalProps> = (props) => {
                 >
                   <Box display="flex">
                     <Box width="8px" />
-                    <Image src={kmaMobile} alt="scb mobile" width="39px" height="39px" />
+                    <Image src={kmaMobile} alt="scb mobile" width="39px" height="39px" unoptimized={true}/>
                     <Box width="12px" />
                     <Typography fontSize="14px" fontWeight="400">
                       KMA (กรุงศรีโมบายแอป) <Typography fontSize="12px" color="red.50">{props.totalPrice > 500 ? 'ยังไม่เปิดให้บริการ' : 'ขั้นต่ำยอดรวม 500 บาท'}</Typography>
@@ -665,7 +665,7 @@ export const PaymentOptionModal: FC<PaymentOptionModalProps> = (props) => {
                   >
                     <Box display="flex">
                       <Box width="8px" />
-                      <Image src={cashIcon} alt="cash icon" width="39px" height="39px" />
+                      <Image src={cashIcon} alt="cash icon" width="39px" height="39px" unoptimized={true}/>
                       <Box width="12px" />
                       <Typography fontSize="14px" fontWeight="400" pt="8px">
                         เงินสด

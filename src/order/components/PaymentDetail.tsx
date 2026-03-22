@@ -276,12 +276,13 @@ export const PaymentDetail: FC<PaymentDetailProps> = (props) => {
                       height: "300px",
                     }}
                   >
-                    <NextImage
+                    <NextImage  
                       src={URL.createObjectURL(watch("file"))}
                       layout="fill"
                       objectFit="contain"
                       priority={true}
-                    />
+  unoptimized={true}
+/>
                   </Box>
                 ) : (
                   <svg
@@ -478,12 +479,13 @@ export const PaymentDetail: FC<PaymentDetailProps> = (props) => {
                                 className={`bank-${props.order?.invoice?.merchantBankAccountPaymentMethod?.bank?.slug}`}
                                 p="4px"
                               >
-                                <NextImage
+                                <NextImage  
                                   src={`/bank-svg/${props.order.invoice.merchantBankAccountPaymentMethod.bank.slug}.svg`}
                                   width={76}
                                   height={60}
                                   priority={true}
-                                />
+  unoptimized={true}
+/>
                               </Box>
                               <Box>
                                 <Typography variant="h4" fontWeight="light">
@@ -610,7 +612,7 @@ export const PaymentDetail: FC<PaymentDetailProps> = (props) => {
                                   height: "200px",
                                 }}
                               >
-                                <NextImage
+                                <NextImage  
                                   src={
                                     props.order.invoice
                                       .merchantPromptpayPaymentMethod
@@ -619,7 +621,8 @@ export const PaymentDetail: FC<PaymentDetailProps> = (props) => {
                                   layout="fill"
                                   objectFit="contain"
                                   priority={true}
-                                />
+  unoptimized={true}
+/>
                               </Box>
                             )}
                             <Box
@@ -647,12 +650,13 @@ export const PaymentDetail: FC<PaymentDetailProps> = (props) => {
                                       ?.merchantPromptpayPaymentMethod?.number
                                   }
                                 >
-                                  <NextImage
+                                  <NextImage  
                                     src={"/copy-icon.svg"}
                                     alt="heart icon"
                                     width={"12px"}
                                     height={"12px"}
-                                  />
+  unoptimized={true}
+/>
                                 </CopyToClipboard>
                               ) : (
                                 ""
@@ -909,12 +913,13 @@ export const PaymentDetail: FC<PaymentDetailProps> = (props) => {
                           className={`bank-${props.order.invoice.merchantBankAccountPaymentMethod.bank.slug}`}
                           p="4px"
                         >
-                          <NextImage
+                          <NextImage  
                             src={`/bank-svg/${props.order.invoice.merchantBankAccountPaymentMethod.bank.slug}.svg`}
                             width={76}
                             height={60}
                             priority={true}
-                          />
+  unoptimized={true}
+/>
                         </Box>
                         <Box>
                           <Typography variant="h4" fontWeight="light">
@@ -984,7 +989,7 @@ export const PaymentDetail: FC<PaymentDetailProps> = (props) => {
                                 height: "300px",
                               }}
                             >
-                              <NextImage
+                              <NextImage  
                                 src={
                                   props.order.invoice
                                     .merchantPromptpayPaymentMethod?.imageUpload
@@ -993,7 +998,8 @@ export const PaymentDetail: FC<PaymentDetailProps> = (props) => {
                                 layout="fill"
                                 objectFit="contain"
                                 priority={true}
-                              />
+  unoptimized={true}
+/>
                             </Box>
                           )}
                         </Box>
@@ -1204,12 +1210,13 @@ export const PaymentDetail: FC<PaymentDetailProps> = (props) => {
                                   height: "300px",
                                 }}
                               >
-                                <NextImage
+                                <NextImage  
                                   src={URL.createObjectURL(watch("file"))}
                                   layout="fill"
                                   objectFit="contain"
                                   priority={true}
-                                />
+  unoptimized={true}
+/>
                               </Box>
                             ) : (
                               <svg

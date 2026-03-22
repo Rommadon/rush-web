@@ -26,7 +26,7 @@ export const BestSellerCardMock: FC<BestSellerCardMockType> = (props) => {
         borderRadius={isDesktop ? "0" : "8px"}
         position="relative"
       >
-        <NextImage
+        <NextImage  
           className={isDesktop ? "" : "rounded-2"}
           src={props.image}
           width={272}
@@ -34,7 +34,8 @@ export const BestSellerCardMock: FC<BestSellerCardMockType> = (props) => {
           blurDataURL={"/popular-product-thumbnail.jpg"}
           quality={70}
           objectFit="cover"
-        />
+  unoptimized={true}
+/>
       </Box>
       <Box pt="8px">
         <Text lineClamp="2">

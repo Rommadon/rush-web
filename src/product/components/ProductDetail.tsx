@@ -324,6 +324,7 @@ export const ProductDetail: FC<ProductDetailProps> = (props) => {
                     alt="profile logo"
                     layout="fill"
                     objectFit="contain"
+                    unoptimized={true}
                     onClick={() =>
                       onUpdateProductFavorite(product?.id, "inActive")
                     }

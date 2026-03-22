@@ -143,28 +143,30 @@ export const PersonalInfoMobile: FC<PersonalInfoMobileProps> = (props) => {
             {
               file ? (
                 typeof file !== "object" ?
-                  <NextImage
+                  <NextImage  
                     src={profile?.imageUpload?.url}
                     width="100"
                     height="100"
                     objectPosition={"center"}
                     priority={true}
                     objectFit="cover"
-                  />
+  unoptimized={true}
+/>
                   :
-                  <NextImage
+                  <NextImage  
                     src={URL.createObjectURL(file)}
                     width="100"
                     height="100"
                     objectPosition={"center"}
                     priority={true}
                     objectFit="cover"
-                  />
+  unoptimized={true}
+/>
               ) : (
                 <>
                   {
                     profile?.imageUpload?.url ? (
-                      <NextImage
+                      <NextImage  
                         src={
                           profile?.imageUpload?.url
                             ? profile?.imageUpload?.url
@@ -173,7 +175,8 @@ export const PersonalInfoMobile: FC<PersonalInfoMobileProps> = (props) => {
                         width="100"
                         height="100"
                         objectPosition={"center"}
-                      />
+  unoptimized={true}
+/>
                     ) : (
                       <Box
                         width="100px"

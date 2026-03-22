@@ -60,7 +60,7 @@ export const ContactUsDrawer: FC<{ open: boolean; onClose: () => void; onOpen: (
               sx={{ cursor: "pointer" }}
             >
               <Box width="24px" height="24px" display="flex" justifyContent="center" alignItems="center">
-                <Image src={contact.icon} alt={`${contact.label} icon`} width={24} height={24} objectFit="contain" />
+                <Image src={contact.icon} alt={`${contact.label} icon`} width={24} height={24} objectFit="contain" unoptimized={true}/>
               </Box>
               <Typography variant="h4">{contact.label}</Typography>
               <Box width="24px"></Box>
@@ -85,7 +85,7 @@ export const ContactUsDrawer: FC<{ open: boolean; onClose: () => void; onOpen: (
               sx={{ cursor: "pointer" }}
             >
               <Box width="24px" height="24px" display="flex" justifyContent="center" alignItems="center">
-                <Image src={phoneIcon} alt="phone icon" width={24} height={24} objectFit="contain" />
+                <Image src={phoneIcon} alt="phone icon" width={24} height={24} objectFit="contain" unoptimized={true}/>
               </Box>
               <Typography variant="h4">{currentMerchant?.data?.tel}</Typography>
               <Box width="24px"></Box>
@@ -112,7 +112,7 @@ export const ContactUsDrawer: FC<{ open: boolean; onClose: () => void; onOpen: (
               sx={{ cursor: "pointer" }}
             >
               <Box width="24px" height="24px" display="flex" justifyContent="center" alignItems="center">
-                <Image src={chatIcon} alt="chat icon" width={24} height={24} objectFit="contain" />
+                <Image src={chatIcon} alt="chat icon" width={24} height={24} objectFit="contain" unoptimized={true}/>
               </Box>
               <Typography variant="h4">Chat</Typography>
               <Box width="24px"></Box>

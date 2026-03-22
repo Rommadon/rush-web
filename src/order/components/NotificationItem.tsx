@@ -47,7 +47,7 @@ export const NotificationItem: FC<NotificationProps> = (props) => {
         {
           props.src && (
             <Box width="80px" height="80px" borderRadius="8px" overflow="hidden">
-              <NextImage src={props.src ?? ""} width={140} height={140} />
+              <NextImage src={props.src ?? ""} width={140} height={140} unoptimized={true}/>
             </Box>
           )
         }
@@ -75,7 +75,7 @@ export const NotificationItem: FC<NotificationProps> = (props) => {
     //   {
     //     props.src && (
     //       <Box width="140px" height="140px" borderRadius="8px" overflow="hidden">
-    //         <NextImage src={props.src ?? ""} width={140} height={140} />
+    //         <NextImage src={props.src ?? ""} width={140} height={140} unoptimized={true}/>
     //       </Box>
     //     )
     //   }

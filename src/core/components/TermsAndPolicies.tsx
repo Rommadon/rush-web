@@ -329,7 +329,7 @@ export const TermsAndPolicies: FC<TermsAndPoliciesProps> = (props) => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <Image src={facebookLogo} alt="facebook logo" />
+                    <Image src={facebookLogo} alt="facebook logo" unoptimized={true}/>
                   </a>
                 )}
                 <Box width="32px" />
@@ -339,14 +339,14 @@ export const TermsAndPolicies: FC<TermsAndPoliciesProps> = (props) => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <Image src={instagramLogo} alt="facebook logo" />
+                    <Image src={instagramLogo} alt="facebook logo" unoptimized={true}/>
                   </a>
                 )}
                 <Box width="32px" />
                 {
                   currentMerchant?.data?.youtubeSocialContact && (
                     <a href={`${currentMerchant?.data?.youtubeSocialContact}`} target="_blank" rel="noreferrer">
-                      <Image src={youtubeLogo} alt="youtube logo" width="24px" height="24px" />
+                      <Image src={youtubeLogo} alt="youtube logo" width="24px" height="24px" unoptimized={true}/>
                     </a>
                   )
                 }

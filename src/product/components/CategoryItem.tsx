@@ -26,7 +26,7 @@ export const CategoryItem: FC<CategoryItemProps> = (props) => {
           display="block"
           mx="auto"
         >
-          <NextImage
+          <NextImage  
             className="rounded-2"
             src={props.imgSrc ?? "/category-placeholder.jpg"}
             width={160}
@@ -35,7 +35,8 @@ export const CategoryItem: FC<CategoryItemProps> = (props) => {
             priority
             // placeholder="blur"
             blurDataURL={"/popular-product-thumbnail.jpg"}
-          />
+  unoptimized={true}
+/>
         </Box>
         <Typography variant="h2" component="h2" fontWeight="light" textAlign="center" pt="24px">
           {props.name}
@@ -56,7 +57,7 @@ export const CategoryItem: FC<CategoryItemProps> = (props) => {
           position="relative"
           display="block"
         >
-          <NextImage
+          <NextImage  
             className="rounded-2"
             src={props.imgSrc ?? "/category-placeholder.jpg"}
             width={80}
@@ -65,7 +66,8 @@ export const CategoryItem: FC<CategoryItemProps> = (props) => {
             priority
             // placeholder="blur"
             blurDataURL={"/popular-product-thumbnail.jpg"}
-          />
+  unoptimized={true}
+/>
         </Box>
         <Box
           flex="1"

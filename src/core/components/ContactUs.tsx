@@ -99,7 +99,7 @@ export const ContactUs: FC<ContactUsProps> = (props) => {
                   rel="noreferrer"
                   
                 >
-                  <Image src={facebookLogo} alt="facebook logo" width="24px" height="24px" />
+                  <Image src={facebookLogo} alt="facebook logo" width="24px" height="24px" unoptimized={true}/>
                 </a>
               )}
               <Box width="8px" />
@@ -109,14 +109,14 @@ export const ContactUs: FC<ContactUsProps> = (props) => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Image src={instagramLogo} alt="facebook logo" />
+                  <Image src={instagramLogo} alt="facebook logo" unoptimized={true}/>
                 </a>
               )}
               <Box width="4px" />
               {
                 currentMerchant?.data?.youtubeSocialContact && (
                   <a href={`${currentMerchant?.data?.youtubeSocialContact}`} target="_blank" rel="noreferrer">
-                    <Image src={youtubeLogo} alt="youtube logo" width="42px" height="42px" />
+                    <Image src={youtubeLogo} alt="youtube logo" width="42px" height="42px" unoptimized={true}/>
                   </a>
                 )
               }

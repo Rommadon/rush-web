@@ -40,7 +40,7 @@ export const NotificationItem: FC<NotificationProps> = (props) => {
   return (
     <Box display="flex" width="100%" bgcolor={`${isAlready ? 'white' : 'grey.50'}`} p="16px" borderBottom="1px solid" borderColor="grey.100" onClick={() => updateIsAlready()}>
       <Box width="140px" height="140px" borderRadius="8px" overflow="hidden">
-        <NextImage src={props.src ?? ""} width={140} height={140} />
+        <NextImage src={props.src ?? ""} width={140} height={140} unoptimized={true}/>
       </Box>
       <Box p="8px" flex="1">
         <Box display="flex" justifyContent="space-between">

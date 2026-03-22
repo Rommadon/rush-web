@@ -51,6 +51,7 @@ export const ProductDetailDrawer: FC<ProductDetailDrawerProps> = (props) => {
             width="96"
             height="96"
             alt={props.product?.name}
+            unoptimized={true}
           />
           <Box ml={'16px'}>
             <Box display="flex" alignItems="center">

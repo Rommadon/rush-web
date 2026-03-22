@@ -84,14 +84,14 @@ export const ProductDetailGallery: FC<{ images: ProductImage[] }> = (props) => {
     <Box width="100%">
       {isDesktop && (
         <Box borderRadius="8px" overflow="hidden">
-          <NextImage
+          <NextImage  
             src={selectedImage}
             width={300}
             height={300}
             layout="responsive"
             priority={true}
-            unoptimized
-          />
+  unoptimized={true}
+/>
         </Box>
       )}
       {!isDesktop && (
@@ -106,57 +106,49 @@ export const ProductDetailGallery: FC<{ images: ProductImage[] }> = (props) => {
               >
                 {
                   image.imageUpload && (
-                    <NextImage
-                      src={image.imageUpload?.url}
-                      alt={image.imageUpload?.name}
-                      width={375}
-                      height={375}
-                      layout="responsive"
-                      priority
-                      placeholder="blur"
-                      blurDataURL={image.imageUpload?.url || "/new-in-placeholder.svg"}
-                    />
-                  )
-                }
-              </Box>
-            </Box>
-          ))}
-        />
-        // <Box minWidth="320px" minHeight="320px" position="relative">
-        //   <NextImage
-        //     src={productImage || "/article-placeholder.svg"}
-        //     width={375}
-        //     height={375}
-        //     layout="fill"
-        //     priority={true}
-        //   />
-        // </Box>
-      )}
-      {isDesktop && (
-        <Box mt="24px">
-          <AliceCarousel
-            mouseTracking
-            disableDotsControls
-            // disableButtonsControls
-            autoHeight
-            infinite
-            items={props.images?.sort(
-              (a: any, b: any) => a.order - b.order
-            ).map((image, index) => (
-              <Box key={index} borderRadius="8px">
-                <NextImage
-                  onClick={() => setSelectedImage(image?.imageUpload?.url)}
-                  className="rounded-2"
-                  src={image?.imageUpload?.url || "/new-in-placeholder.svg"}
-                  width={100}
-                  height={100}
-                  priority={true}
-                  unoptimized
-                  placeholder="blur"
-                  blurDataURL={image?.imageUpload?.url || "/new-in-placeholder.svg"}
-                />
-              </Box>
-            ))}
+                     <NextImage  
+                       src={image.imageUpload?.url}
+                       alt={image.imageUpload?.name}
+                       width={375}
+                       height={375}
+                       layout="responsive"
+                       priority
+                       placeholder="blur"
+                       blurDataURL={image.imageUpload?.url || "/new-in-placeholder.svg"}
+  unoptimized={true}
+/>
+                   )
+                 }
+               </Box>
+             </Box>
+           ))}
+         />
+       )}
+       {isDesktop && (
+         <Box mt="24px">
+           <AliceCarousel
+             mouseTracking
+             disableDotsControls
+             // disableButtonsControls
+             autoHeight
+             infinite
+             items={props.images?.sort(
+               (a: any, b: any) => a.order - b.order
+             ).map((image, index) => (
+               <Box key={index} borderRadius="8px">
+                 <NextImage  
+                   onClick={() => setSelectedImage(image?.imageUpload?.url)}
+                   unoptimized={true}
+                   className="rounded-2"
+                   src={image?.imageUpload?.url || "/new-in-placeholder.svg"}
+                   width={100}
+                   height={100}
+                   priority={true}
+                   placeholder="blur"
+                   blurDataURL={image?.imageUpload?.url || "/new-in-placeholder.svg"}
+                 />
+               </Box>
+             ))}
             paddingRight={12}
             responsive={{ "0": { items: 4 } }}
             controlsStrategy="basic"

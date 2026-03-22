@@ -290,6 +290,7 @@ export const OrderDetailDesktop: FC<OrderDetailDesktopProps> = (props) => {
                     width={140}
                     height={140}
                     priority={true}
+                    unoptimized={true}
                   />
                 </Box>
                 <Box flex="1">
@@ -654,6 +655,7 @@ const OrderPaymentDetail: FC<{
                 width={76}
                 height={60}
                 priority={true}
+                unoptimized={true}
               />
             </Box>
             <Box>
@@ -717,6 +719,7 @@ const OrderPaymentDetail: FC<{
                     layout="fill"
                     objectFit="contain"
                     priority={true}
+                    unoptimized={true}
                   />
                 </Box>
               )}

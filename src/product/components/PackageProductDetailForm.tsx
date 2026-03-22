@@ -78,12 +78,13 @@ export const PackageProductDetailForm: FC<PackageProductDetailFormProp> = (
                   </Box>
                 )}
                 <Box width="184px" height="184px">
-                  <NextImage
+                  <NextImage  
                     src={product?.image || ''}
                     width={184}
                     height={184}
                     alt={product.name}
-                  />
+  unoptimized={true}
+/>
                   <Typography variant="h3" mt="16px">
                     {product.name}
                   </Typography>

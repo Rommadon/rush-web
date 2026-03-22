@@ -43,14 +43,15 @@ export const CatalogComponent: FC<CatalogProps> = (props) => {
               style={{ cursor: "pointer" }}
             >
               <Box>
-                <Image
+                <Image  
                   src={catalog?.imageUpload?.url}
                   alt={catalog?.name}
                   height={150}
                   width={150}
                   className="circle-3"
                   key={i}
-                />
+  unoptimized={true}
+/>
               </Box>
               <Box pt={1}>
                 <Text lineClamp="2">

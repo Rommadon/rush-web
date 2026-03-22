@@ -69,7 +69,7 @@ export const BannerComponent = (props: BannerProp) => {
       <HomeBannerCarousel
         images={props?.bannerMerchants?.map((heroImage: any, i: any) => (
           <Box key={i}>
-            <Image
+            <Image  
               src={
                 heroImage?.bannerMerchantDesktop?.imageUpload?.url ||
                 "/popular-product-thumbnail.jpg"
@@ -83,7 +83,8 @@ export const BannerComponent = (props: BannerProp) => {
                 heroImage?.bannerMerchantDesktop?.imageUpload?.url ||
                 "/popular-product-thumbnail.jpg"
               }
-            />
+  unoptimized={true}
+/>
           </Box>
         ))}
       />
@@ -105,7 +106,7 @@ export const BannerComponent = (props: BannerProp) => {
               position="relative"
               display={{ xs: "none", md: "block" }}
             >
-              <Image
+              <Image  
                 src={
                   heroImage?.bannerMerchantDesktop?.imageUpload?.url ||
                   "/popular-product-thumbnail.jpg"
@@ -119,10 +120,11 @@ export const BannerComponent = (props: BannerProp) => {
                   heroImage?.bannerMerchantDesktop?.imageUpload?.url ||
                   "/popular-product-thumbnail.jpg"
                 }
-              />
+  unoptimized={true}
+/>
             </Box>
             <Box position="relative" display={{ xs: "block", md: "none" }}>
-              <Image
+              <Image  
                 className="image-responsive"
                 src={
                   heroImage?.bannerMerchantApplication?.imageUpload?.url ||
@@ -134,7 +136,8 @@ export const BannerComponent = (props: BannerProp) => {
                 layout="responsive"
                 blurDataURL={"/popular-product-thumbnail.jpg"}
                 quality={70}
-              />
+  unoptimized={true}
+/>
             </Box>
             <Box
               width="100%"

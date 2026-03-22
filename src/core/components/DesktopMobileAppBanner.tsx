@@ -34,12 +34,13 @@ const DesktopMobileAppBanner: FC<DesktopMobileAppBannerProps> = () => {
           <Box display={"flex"} alignItems={"center"} justifyContent={"center"}>
             {currentMerchant?.data?.merchantIcon?.imageUpload?.url && (
               <Box pr="24px" className="cookie-info-icon">
-                <Image
+                <Image  
                   src={currentMerchant?.data?.merchantIcon?.imageUpload?.url}
                   alt={`${currentMerchant?.data?.name}`}
                   width="100px"
                   height="100px"
-                />
+  unoptimized={true}
+/>
               </Box>
             )}
             <Box px="8px">
@@ -65,12 +66,13 @@ const DesktopMobileAppBanner: FC<DesktopMobileAppBannerProps> = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Image
+                  <Image  
                     src={"/app-stores.png"}
                     alt="merchant icon"
                     width="125px"
                     height="37.5px"
-                  />
+  unoptimized={true}
+/>
                 </a>
               </Box>
               <Box
@@ -86,12 +88,13 @@ const DesktopMobileAppBanner: FC<DesktopMobileAppBannerProps> = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Image
+                  <Image  
                     src={"/play-stores.png"}
                     alt="merchant icon"
                     width="125px"
                     height="37.5px"
-                  />
+  unoptimized={true}
+/>
                 </a>
               </Box>
             </Box>

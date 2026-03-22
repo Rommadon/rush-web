@@ -28,7 +28,7 @@ export const CatalogItem: FC<CatalogItemProps> = (props) => {
               position="relative"
               display="block"
             >
-              <NextImage
+              <NextImage  
                 className="circle-2"
                 src={props.imgSrc ?? "/category-placeholder.jpg"}
                 width={80}
@@ -37,7 +37,8 @@ export const CatalogItem: FC<CatalogItemProps> = (props) => {
                 priority
                 // placeholder="blur"
                 blurDataURL={"/popular-product-thumbnail.jpg"}
-              />
+  unoptimized={true}
+/>
             </Box>
             <Box textAlign="center" pt="8px">
               <Typography variant="h4" component="h3" fontWeight="light">

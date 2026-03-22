@@ -172,7 +172,7 @@ export const CookieConsentToast: FC<CookieConsentToastProps> = () => {
               {
                 currentMerchant?.data?.merchantIcon?.imageUpload?.url && (
                   <Box pr="24px" className="cookie-info-icon">
-                    <Image src={currentMerchant?.data?.merchantIcon?.imageUpload?.url} alt="merchant icon" width="100px" height="100px" />
+                    <Image src={currentMerchant?.data?.merchantIcon?.imageUpload?.url} alt="merchant icon" width="100px" height="100px" unoptimized={true}/>
                   </Box>
                 )
               }

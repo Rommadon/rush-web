@@ -95,7 +95,7 @@ export const Navbar: FC<NavbarProp> = (props) => {
                         position: "relative",
                       }}
                     >
-                      <Image
+                      <Image  
                         src={
                           currentMerchant?.data?.merchantLogo?.imageUpload?.url
                         }
@@ -103,7 +103,8 @@ export const Navbar: FC<NavbarProp> = (props) => {
                         layout="fill"
                         objectFit="contain"
                         priority={true}
-                      />
+  unoptimized={true}
+/>
                     </a>
                   </NextLink>
                 </Box>
@@ -214,9 +215,9 @@ export const Navbar: FC<NavbarProp> = (props) => {
                       >
                         {/* {
                         profile?.imageUpload?.url ? (
-                          <Image height="25px" width="25px" src={profile?.imageUpload?.url} alt="profile logo" objectPosition={"center"} objectFit="cover" priority={true} />
+                          <Image height="25px" width="25px" src={profile?.imageUpload?.url} alt="profile logo" objectPosition={"center"} objectFit="cover" priority={true} unoptimized={true}/>
                         ) : (
-                          <Image src={myProfileIcon} height="25px" width="25px" alt="profile logo" objectPosition={"center"} objectFit="cover" priority={true} />
+                          <Image src={myProfileIcon} height="25px" width="25px" alt="profile logo" objectPosition={"center"} objectFit="cover" priority={true} unoptimized={true}/>
                         )
                       } */}
                         {
@@ -226,7 +227,7 @@ export const Navbar: FC<NavbarProp> = (props) => {
                             </Typography>
                           ) : (
                             // <Box mr='14px'>
-                            <Image
+                            <Image  
                               src={myProfileIcon}
                               height="25px"
                               width="25px"
@@ -234,7 +235,8 @@ export const Navbar: FC<NavbarProp> = (props) => {
                               objectPosition={"center"}
                               objectFit="cover"
                               priority={true}
-                            />
+  unoptimized={true}
+/>
                           )
                           // </Box>
                         }
@@ -247,13 +249,14 @@ export const Navbar: FC<NavbarProp> = (props) => {
                       mr="14px"
                       sx={{ cursor: "pointer" }}
                     >
-                      <Image
+                      <Image  
                         src={thailandIcon}
                         alt={`${currentMerchant?.data?.name} - thailand logo`}
                         layout="fill"
                         objectFit="contain"
                         priority={true}
-                      />
+  unoptimized={true}
+/>
                     </Box>
                     {/* {isOpenSearch ? (
                       <Box
@@ -278,13 +281,14 @@ export const Navbar: FC<NavbarProp> = (props) => {
                         width="25px"
                         sx={{ cursor: "pointer" }}
                       >
-                        <Image
+                        <Image  
                           src={searchIconMobile}
                           alt={`${currentMerchant?.data?.name} - search logo`}
                           layout="fill"
                           objectFit="contain"
                           priority={true}
-                        />
+  unoptimized={true}
+/>
                       </Box>
                     )} */}
                     <Box
@@ -294,13 +298,14 @@ export const Navbar: FC<NavbarProp> = (props) => {
                       sx={{ cursor: "pointer" }}
                     >
                       <NextLink href={routes.cart()}>
-                        <Image
+                        <Image  
                           src={cartIcon}
                           alt={`${currentMerchant?.data?.name} - profile logo`}
                           layout="fill"
                           objectFit="contain"
                           priority={true}
-                        />
+  unoptimized={true}
+/>
                       </NextLink>
                       {cartData?.cartItems?.length > 0 && (
                         <Box
@@ -343,13 +348,14 @@ export const Navbar: FC<NavbarProp> = (props) => {
                       mr="14px"
                       sx={{ cursor: "pointer" }}
                     >
-                      <Image
+                      <Image  
                         src={thailandIcon}
                         alt={`${currentMerchant?.data?.name} - profile logo`}
                         layout="fill"
                         objectFit="contain"
                         priority={true}
-                      />
+  unoptimized={true}
+/>
                     </Box>
                     {/* {isOpenSearch ? (
                       <Box
@@ -374,13 +380,14 @@ export const Navbar: FC<NavbarProp> = (props) => {
                         width="25px"
                         sx={{ cursor: "pointer" }}
                       >
-                        <Image
+                        <Image  
                           src={searchIconMobile}
                           alt={`${currentMerchant?.data?.name} - search logo`}
                           layout="fill"
                           objectFit="contain"
                           priority={true}
-                        />
+  unoptimized={true}
+/>
                       </Box>
                     )} */}
                     <Box
@@ -391,13 +398,14 @@ export const Navbar: FC<NavbarProp> = (props) => {
                       // mr="14px"
                       sx={{ cursor: "pointer" }}
                     >
-                      <Image
+                      <Image  
                         src={cartIcon}
                         alt={`${currentMerchant?.data?.name} - cart logo`}
                         layout="fill"
                         objectFit="contain"
                         priority={true}
-                      />
+  unoptimized={true}
+/>
                     </Box>
                   </Box>
                 )}

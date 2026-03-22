@@ -123,28 +123,30 @@ export const Me: FC<MeProps> = (props) => {
               {
                 file ? (
                   typeof file !== "object" ? 
-                    <NextImage
+                    <NextImage  
                       src={profile?.imageUpload?.url}
                       width="70"
                       height="70"
                       objectPosition={"center"}
                       priority={true}
                       objectFit="cover"
-                    />
+  unoptimized={true}
+/>
                     :
-                    <NextImage
+                    <NextImage  
                       src={URL.createObjectURL(file)}
                       width="70"
                       height="70"
                       objectPosition={"center"}
                       priority={true}
                       objectFit="cover"
-                    />
+  unoptimized={true}
+/>
                 ) : (
                   <>
                   {
                     profile?.imageUpload?.url ? (
-                      <NextImage
+                      <NextImage  
                         src={
                           profile?.imageUpload?.url
                             ? profile?.imageUpload?.url
@@ -153,7 +155,8 @@ export const Me: FC<MeProps> = (props) => {
                         width="70"
                         height="70"
                         objectPosition={"center"}
-                      />
+  unoptimized={true}
+/>
                     ) : (
                       <Box
                         width="70px"
@@ -218,7 +221,7 @@ export const Me: FC<MeProps> = (props) => {
           {
             currentMerchant && currentMerchant?.data?.merchantIcon?.imageUpload && (
               <Box style={{ display: 'block', width: '20px', height: '20px', position: "relative", marginRight: '8px' }}>
-                <NextImage src={currentMerchant?.data?.merchantIcon?.imageUpload?.url} alt="shopdit logo" layout="fill" objectFit="contain" priority={true} />
+                <NextImage src={currentMerchant?.data?.merchantIcon?.imageUpload?.url} alt="shopdit logo" layout="fill" objectFit="contain" priority={true} unoptimized={true}/>
               </Box>
             )
           }

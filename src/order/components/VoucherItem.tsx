@@ -75,7 +75,7 @@ export const VoucherItem: FC<VoucherItemProps> = (props) => {
             alignItems="center"
             width="100%"
           >
-            <NextImage
+            <NextImage  
               src={props.orderItem.productItemImageUrl || ""}
               width={110}
               height={110}
@@ -83,7 +83,8 @@ export const VoucherItem: FC<VoucherItemProps> = (props) => {
               quality={70}
               alt={`${props?.name}`}
               objectFit="cover"
-            />
+  unoptimized={true}
+/>
           </Box>
           <Box
             bgcolor={

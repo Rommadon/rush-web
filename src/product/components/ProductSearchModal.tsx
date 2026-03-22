@@ -201,12 +201,13 @@ export const ProductSearchModal: FC<ProductSearchModalProps> = (props) => {
                   borderRadius="8px"
                   mr="16px"
                 >
-                  <NextImage
+                  <NextImage  
                     src={category?.logo?.url ?? ""}
                     alt={category.name}
                     width={40}
                     height={40}
-                  />
+  unoptimized={true}
+/>
                 </Box>
 
                 <Typography fontSize="14px">{category.name}</Typography>

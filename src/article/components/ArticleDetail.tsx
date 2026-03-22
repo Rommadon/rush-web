@@ -30,12 +30,13 @@ export const ArticleDetail: FC<ArticleDetailProps> = (props) => {
           height={isDesktop ? "500px" : "245px"}
           width="100%"
         >
-          <NextImage
+          <NextImage  
             src={props.article.imageUpload?.url ?? ""}
             layout="fill"
             objectFit="contain"
             priority={true}
-          />
+  unoptimized={true}
+/>
         </Box>
         {isDesktop && <Box
           display="flex"

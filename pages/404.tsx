@@ -58,7 +58,7 @@ export default function InternalServerErrorPage() {
         currentMerchant?.data?.merchantIcon?.imageUpload && (
           <NextLink href={"/"}>
             <Box style={{ display: 'block', width: '100%', height: isDesktop ? '100px' : '75px', position: "relative" }}>
-              <Image src={currentMerchant?.data?.merchantIcon?.imageUpload?.url} alt="shopdit logo" layout="fill" objectFit="contain" priority={true} />
+              <Image src={currentMerchant?.data?.merchantIcon?.imageUpload?.url} alt="shopdit logo" layout="fill" objectFit="contain" priority={true} unoptimized={true}/>
             </Box>
           </NextLink>
         )

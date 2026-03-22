@@ -44,17 +44,17 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
             overflow="hidden"
             borderRadius={isDesktop ? "0" : "8px"}
           >
-            <NextImage
+            <NextImage  
               className={isDesktop ? "img-cover" : "rounded-2 img-cover"}
               src={props?.imageUpload?.url ?? "/new-in-placeholder.svg"}
               width={props?.width || dimensions.width || 240}
               height={props?.height || (dimensions.width * 9) / 16 || 135}
-              // unoptimized
               // priority={true}
               // placeholder="blur"
               blurDataURL={"/popular-product-thumbnail.jpg"}
               quality={50}
-            />
+  unoptimized={true}
+/>
             {/* <img
           src={props?.imageUpload?.url ?? "/article-placeholder.svg"}
           className="image-responsive rounded"

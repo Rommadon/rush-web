@@ -52,7 +52,7 @@ export const MobileAppBar: FC<MobileAppBarProps> = (props) => {
                           position: "relative",
                         }}
                       >
-                        <Image
+                        <Image  
                           src={
                             currentMerchant?.data?.merchantLogo?.imageUpload
                               ?.url
@@ -61,7 +61,8 @@ export const MobileAppBar: FC<MobileAppBarProps> = (props) => {
                           layout="fill"
                           objectFit="contain"
                           priority={true}
-                        />
+  unoptimized={true}
+/>
                       </a>
                     </NextLink>
                   ) : (

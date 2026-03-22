@@ -80,12 +80,13 @@ export default function InternalServerErrorPage() {
                     position: "relative",
                   }}
                 >
-                  <Image
+                  <Image  
                     src="/shopdit-logo.png"
                     alt="shopdit logo"
                     width="256px"
                     height="79px"
-                  />
+  unoptimized={true}
+/>
                 </a>
               </NextLink>
             </Box>
@@ -122,13 +123,14 @@ export default function InternalServerErrorPage() {
                   position: "relative",
                 }}
               >
-                <Image
+                <Image  
                   src={currentMerchant?.data?.merchantIcon?.imageUpload?.url}
                   alt="shopdit logo"
                   layout="fill"
                   objectFit="contain"
                   priority={true}
-                />
+  unoptimized={true}
+/>
               </Box>
             </NextLink>
           )}

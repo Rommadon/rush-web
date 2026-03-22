@@ -144,17 +144,17 @@ export const FlashSaleCard: FC<FlashSaleCardProps> = (props) => {
                 badgeLeftText={badgeLeftText}
                 badgeRightText={badgeRightText}
               />
-              <NextImage
+              <NextImage  
                 className="rounded-2"
                 src={productImage ?? "/new-in-placeholder.svg"}
                 width={120}
                 height={120}
                 priority={true}
-                // unoptimized
                 // placeholder="blur"
                 blurDataURL={"/popular-product-thumbnail.jpg"}
                 quality={70}
-              />
+  unoptimized={true}
+/>
             </Box>
             <Box
               pt="4px"
@@ -293,17 +293,17 @@ export const FlashSaleCard: FC<FlashSaleCardProps> = (props) => {
                 badgeLeftText={badgeLeftText}
                 badgeRightText={badgeRightText}
               />
-              <NextImage
+              <NextImage  
                 className="rounded-2"
                 src={productImage ?? "/new-in-placeholder.svg"}
                 width={120}
                 height={120}
                 priority={true}
-                // unoptimized
                 // placeholder="blur"
                 blurDataURL={"/popular-product-thumbnail.jpg"}
                 quality={70}
-              />
+  unoptimized={true}
+/>
             </Box>
             <Box
               pt="4px"
@@ -393,13 +393,14 @@ export const FlashSaleCard: FC<FlashSaleCardProps> = (props) => {
                     height="20px"
                     onClick={() => setOpenOptionDrawerOrLogin()}
                   >
-                    <NextImage
+                    <NextImage  
                       src={cartIcon}
                       alt="cart icon"
                       width="20px"
                       height="20px"
                       priority={true}
-                    />
+  unoptimized={true}
+/>
                   </Box>
                 </Box>
               </Box>

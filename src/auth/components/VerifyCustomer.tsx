@@ -127,12 +127,13 @@ export const VerifyCustomer: FC<any> = (props) => {
             background: "#ffffff",
           }}
         >
-          <Image
+          <Image  
             src={verifyStatus ? VerifySuccessIcon : VerifyIcon} // Replace with the correct path to your image
             alt="Circle Image"
             width="400px" // Make the image take up the entire Box
             height="400px" // Make the image take up the entire Box
-          />
+  unoptimized={true}
+/>
         </Box>
         <Box
           sx={{

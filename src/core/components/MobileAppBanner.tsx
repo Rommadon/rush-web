@@ -33,12 +33,13 @@ const MobileAppBanner: FC<MobileAppBannerProps> = () => {
       <Box display={"flex"} alignItems={"center"} justifyContent={"center"}>
         {currentMerchant?.data?.merchantIcon?.imageUpload?.url && (
           <Box pr="24px" className="cookie-info-icon" display={{ xs: "none" }}>
-            <Image
+            <Image  
               src={currentMerchant?.data?.merchantIcon?.imageUpload?.url}
               alt={`${currentMerchant?.data?.name}`}
               width="100px"
               height="100px"
-            />
+  unoptimized={true}
+/>
           </Box>
         )}
         <Box px="8px" textAlign={"center"}>
@@ -66,12 +67,13 @@ const MobileAppBanner: FC<MobileAppBannerProps> = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <Image
+            <Image  
               src={"/app-stores.png"}
               alt={`${currentMerchant?.data?.name} - app store`}
               width="100px"
               height="30px"
-            />
+  unoptimized={true}
+/>
           </a>
         </Box>
         <Box py="2px" px="8px" sx={{ cursor: "pointer" }}>
@@ -80,12 +82,13 @@ const MobileAppBanner: FC<MobileAppBannerProps> = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <Image
+            <Image  
               src={"/play-stores.png"}
               alt={`${currentMerchant?.data?.name} - play store`}
               width="100px"
               height="30px"
-            />
+  unoptimized={true}
+/>
           </a>
         </Box>
       </Box>

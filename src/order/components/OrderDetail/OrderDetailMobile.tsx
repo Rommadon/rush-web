@@ -271,6 +271,7 @@ export const OrderDetailMobile: FC<OrderDetailMobileProps> = (props) => {
                       }
                       width={96}
                       height={96}
+                      unoptimized={true}
                     />
                   </Box>
 

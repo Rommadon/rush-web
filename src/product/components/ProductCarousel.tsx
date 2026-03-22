@@ -44,7 +44,7 @@ export const BannerCarousel: FC<BannerCarouselProp> = (props) => {
           }
         }}
       >
-        <NextImage {...img} src={img.src || "/home-carousel-placeholder.svg"} layout="fill" objectFit="fill" unoptimized priority={true} />
+        <NextImage {...img} src={img.src || "/home-carousel-placeholder.svg"} layout="fill" objectFit="fill"  priority={true} unoptimized={true}/>
       </Box>
     </Box>
   ));
